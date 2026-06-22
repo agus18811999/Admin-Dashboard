@@ -5110,6 +5110,743 @@ textarea.admin-report-field {
     height: 54px !important;
   }
 }
+/* ================================
+   FIX ADMIN LEADERBOARD HEIGHT
+   Editable Ranking List scroll vertical
+   ================================ */
+
+.admin-leaderboard-main-grid,
+.leaderboard-admin-grid,
+.leaderboard-content-grid {
+  align-items: stretch !important;
+}
+
+/* Card kiri Best User dan card kanan Ranking List dibuat sama tinggi */
+.admin-best-user-card,
+.best-user-card,
+.admin-ranking-list-card,
+.editable-ranking-list-card,
+.leaderboard-table-card {
+  height: 560px !important;
+  max-height: 560px !important;
+  min-height: 560px !important;
+  overflow: hidden !important;
+  display: flex !important;
+  flex-direction: column !important;
+}
+
+/* Header ranking tetap di atas */
+.admin-ranking-list-card .section-header,
+.editable-ranking-list-card .section-header,
+.leaderboard-table-card .section-header {
+  flex-shrink: 0 !important;
+}
+
+/* Area tabel ranking jadi scroll vertical */
+.admin-ranking-table-wrapper,
+.editable-ranking-table-wrapper,
+.leaderboard-table-wrapper,
+.ranking-table-wrapper {
+  flex: 1 !important;
+  min-height: 0 !important;
+  max-height: 100% !important;
+  overflow-y: auto !important;
+  overflow-x: auto !important;
+  padding-right: 6px !important;
+}
+
+/* Scrollbar premium */
+.admin-ranking-table-wrapper::-webkit-scrollbar,
+.editable-ranking-table-wrapper::-webkit-scrollbar,
+.leaderboard-table-wrapper::-webkit-scrollbar,
+.ranking-table-wrapper::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+.admin-ranking-table-wrapper::-webkit-scrollbar-track,
+.editable-ranking-table-wrapper::-webkit-scrollbar-track,
+.leaderboard-table-wrapper::-webkit-scrollbar-track,
+.ranking-table-wrapper::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.28);
+  border-radius: 999px;
+}
+
+.admin-ranking-table-wrapper::-webkit-scrollbar-thumb,
+.editable-ranking-table-wrapper::-webkit-scrollbar-thumb,
+.leaderboard-table-wrapper::-webkit-scrollbar-thumb,
+.ranking-table-wrapper::-webkit-scrollbar-thumb {
+  background: linear-gradient(135deg, #5eead4, #60a5fa, #e85ba6);
+  border-radius: 999px;
+}
+
+/* Header table tetap rapi */
+.admin-ranking-table-wrapper table,
+.editable-ranking-table-wrapper table,
+.leaderboard-table-wrapper table,
+.ranking-table-wrapper table {
+  width: 100%;
+  min-width: 780px;
+}
+
+/* Biar header kolom tetap keliatan saat scroll */
+.admin-ranking-table-wrapper thead,
+.editable-ranking-table-wrapper thead,
+.leaderboard-table-wrapper thead,
+.ranking-table-wrapper thead {
+  position: sticky;
+  top: 0;
+  z-index: 5;
+  backdrop-filter: blur(18px);
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .admin-best-user-card,
+  .best-user-card,
+  .admin-ranking-list-card,
+  .editable-ranking-list-card,
+  .leaderboard-table-card {
+    height: auto !important;
+    max-height: none !important;
+    min-height: 0 !important;
+  }
+
+  .admin-ranking-table-wrapper,
+  .editable-ranking-table-wrapper,
+  .leaderboard-table-wrapper,
+  .ranking-table-wrapper {
+    max-height: 460px !important;
+  }
+}
+/* ================================
+   EDITABLE RANKING LIST SCROLL FIX
+   ================================ */
+
+.leaderboard-edit-card {
+  height: 560px !important;
+  max-height: 560px !important;
+  overflow: hidden !important;
+
+  display: flex !important;
+  flex-direction: column !important;
+}
+
+.leaderboard-edit-card .table-head {
+  flex-shrink: 0 !important;
+}
+
+.leaderboard-edit-scroll {
+  flex: 1 !important;
+  min-height: 0 !important;
+
+  overflow-y: auto !important;
+  overflow-x: auto !important;
+
+  padding-right: 6px !important;
+  padding-bottom: 8px !important;
+}
+
+/* Biar tabel tetap lebar dan tidak gepeng */
+.leaderboard-edit-scroll .admin-table {
+  width: 100%;
+  min-width: 850px;
+}
+
+/* Header tabel tetap di atas saat scroll */
+.leaderboard-edit-scroll thead {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  backdrop-filter: blur(18px);
+}
+
+/* Scrollbar premium */
+.leaderboard-edit-scroll::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+.leaderboard-edit-scroll::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.28);
+  border-radius: 999px;
+}
+
+.leaderboard-edit-scroll::-webkit-scrollbar-thumb {
+  background: linear-gradient(135deg, #5eead4, #60a5fa, #e85ba6);
+  border-radius: 999px;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .leaderboard-edit-card {
+    height: auto !important;
+    max-height: none !important;
+  }
+
+  .leaderboard-edit-scroll {
+    max-height: 460px !important;
+  }
+}
+.top-user-box > div {
+  width: 100%;
+}
+
+.winner-category-desc {
+  display: block !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
+.winner-category-desc h4,
+.winner-category-desc p {
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+/* ================================
+   CENTER TITLE - BEST USER CARD
+   ================================ */
+
+.leaderboard-layout .top-card > .section-kicker,
+.leaderboard-layout .top-card > .section-title {
+  width: 100%;
+  text-align: center !important;
+}
+
+.leaderboard-layout .top-card > .section-kicker {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.leaderboard-layout .top-card > .section-title {
+  margin-left: auto;
+  margin-right: auto;
+}
+/* =========================
+   REPORT SCORE GRID
+   ========================= */
+
+.report-score-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px;
+  margin-top: 16px;
+}
+
+.report-score-item {
+  position: relative;
+  overflow: hidden;
+  padding: 16px 18px;
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.55);
+  background: rgba(255, 255, 255, 0.58);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  box-shadow:
+    0 10px 24px rgba(124, 97, 255, 0.08),
+    inset 0 1px 0 rgba(255, 255, 255, 0.65);
+  transition: all 0.25s ease;
+}
+
+.report-score-item::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(255,255,255,0.18), rgba(255,255,255,0));
+  pointer-events: none;
+}
+
+.report-score-item:hover {
+  transform: translateY(-2px);
+  box-shadow:
+    0 14px 32px rgba(124, 97, 255, 0.12),
+    inset 0 1px 0 rgba(255, 255, 255, 0.7);
+}
+
+.report-score-item span {
+  display: block;
+  margin-bottom: 8px;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #7b7f98;
+}
+
+.report-score-item strong {
+  display: block;
+  font-size: 21px;
+  line-height: 1.15;
+  font-weight: 800;
+  color: #28304f;
+}
+
+/* Gradient per item */
+.report-score-item:nth-child(1) {
+  background:
+    linear-gradient(135deg, rgba(79, 209, 197, 0.22), rgba(255, 255, 255, 0.72)),
+    rgba(255,255,255,0.62);
+}
+
+.report-score-item:nth-child(2) {
+  background:
+    linear-gradient(135deg, rgba(110, 123, 255, 0.22), rgba(255, 255, 255, 0.72)),
+    rgba(255,255,255,0.62);
+}
+
+.report-score-item:nth-child(3) {
+  background:
+    linear-gradient(135deg, rgba(255, 124, 180, 0.20), rgba(255, 255, 255, 0.72)),
+    rgba(255,255,255,0.62);
+}
+
+/* Accent text per item */
+.report-score-item:nth-child(1) strong {
+  color: #0d8c7d;
+}
+
+.report-score-item:nth-child(2) strong {
+  color: #4453d1;
+}
+
+.report-score-item:nth-child(3) strong {
+  color: #c2548d;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .report-score-grid {
+    grid-template-columns: 1fr;
+  }
+}
+/* ===============================
+   REPORT CARD ACTION BUTTON PREMIUM
+   =============================== */
+
+.report-card-actions-premium {
+  width: 100%;
+  margin-top: 20px !important;
+
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+  gap: 12px !important;
+  flex-wrap: wrap !important;
+}
+
+.report-action-btn {
+  position: relative;
+  min-width: 136px;
+  min-height: 48px;
+  padding: 0 16px;
+
+  border-radius: 17px;
+  border: 1px solid rgba(255, 255, 255, 0.44);
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+
+  color: #ffffff;
+  font-size: 12.5px;
+  font-weight: 1000;
+  text-decoration: none;
+
+  overflow: hidden;
+  cursor: pointer;
+
+  box-shadow:
+    0 14px 30px rgba(111, 140, 255, 0.18),
+    inset 0 1px 0 rgba(255, 255, 255, 0.32);
+
+  transition: all 0.24s ease;
+}
+
+.report-action-btn::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+
+  background: linear-gradient(
+    120deg,
+    transparent 0%,
+    rgba(255, 255, 255, 0.30) 42%,
+    transparent 72%
+  );
+
+  transform: translateX(-120%);
+  transition: transform 0.55s ease;
+}
+
+.report-action-btn:hover::before {
+  transform: translateX(120%);
+}
+
+.report-action-btn:hover {
+  transform: translateY(-2px);
+}
+
+.report-action-btn:active {
+  transform: translateY(0) scale(0.98);
+}
+
+.report-action-btn span {
+  position: relative;
+  z-index: 2;
+}
+
+.report-action-icon {
+  width: 28px;
+  height: 28px;
+  border-radius: 11px;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  background: rgba(255, 255, 255, 0.20);
+  color: #ffffff;
+  font-size: 12px;
+
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.26);
+}
+
+/* Button Buka Link */
+.report-action-link {
+  background:
+    radial-gradient(circle at 18% 18%, rgba(255,255,255,0.30), transparent 34%),
+    linear-gradient(135deg, #65d7c5 0%, #6f8cff 48%, #8b5cf6 100%);
+}
+
+.report-action-link:hover {
+  box-shadow:
+    0 18px 38px rgba(111, 140, 255, 0.28),
+    0 8px 20px rgba(101, 215, 197, 0.18),
+    inset 0 1px 0 rgba(255, 255, 255, 0.38);
+}
+
+/* Button Buat Report */
+.report-action-create {
+  background:
+    radial-gradient(circle at 18% 18%, rgba(255,255,255,0.30), transparent 34%),
+    linear-gradient(135deg, #6f8cff 0%, #8b5cf6 46%, #e873aa 100%);
+}
+
+.report-action-create:hover {
+  box-shadow:
+    0 18px 38px rgba(139, 92, 246, 0.30),
+    0 8px 20px rgba(232, 115, 170, 0.20),
+    inset 0 1px 0 rgba(255, 255, 255, 0.38);
+}
+
+/* Mobile */
+@media (max-width: 640px) {
+  .report-card-actions-premium {
+    flex-direction: column;
+  }
+
+  .report-action-btn {
+    width: 100%;
+    max-width: 260px;
+  }
+}
+/* ===============================
+   STATUS PROJECT ACTION BUTTON PREMIUM
+   =============================== */
+
+.status-card-actions-premium {
+  width: 100%;
+  margin-top: 22px !important;
+
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+  gap: 12px !important;
+  flex-wrap: wrap !important;
+}
+
+.status-action-btn {
+  position: relative;
+
+  min-width: 132px;
+  min-height: 48px;
+  padding: 0 16px;
+
+  border: 1px solid rgba(255, 255, 255, 0.44);
+  border-radius: 17px;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+
+  color: #ffffff;
+  font-size: 12.5px;
+  font-weight: 1000;
+  text-decoration: none;
+
+  cursor: pointer;
+  overflow: hidden;
+
+  box-shadow:
+    0 14px 30px rgba(83, 94, 160, 0.16),
+    inset 0 1px 0 rgba(255, 255, 255, 0.32);
+
+  transition: all 0.24s ease;
+}
+
+.status-action-btn::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+
+  background: linear-gradient(
+    120deg,
+    transparent 0%,
+    rgba(255, 255, 255, 0.30) 42%,
+    transparent 72%
+  );
+
+  transform: translateX(-120%);
+  transition: transform 0.55s ease;
+}
+
+.status-action-btn:hover::before {
+  transform: translateX(120%);
+}
+
+.status-action-btn:hover {
+  transform: translateY(-2px);
+}
+
+.status-action-btn:active {
+  transform: translateY(0) scale(0.98);
+}
+
+.status-action-btn span {
+  position: relative;
+  z-index: 2;
+}
+
+.status-action-icon {
+  width: 28px;
+  height: 28px;
+  border-radius: 11px;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  background: rgba(255, 255, 255, 0.22);
+  color: #ffffff;
+  font-size: 12px;
+
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.26);
+}
+
+/* Buka Link / QC Lagi */
+.status-action-link {
+  background:
+    radial-gradient(circle at 18% 18%, rgba(255,255,255,0.30), transparent 34%),
+    linear-gradient(135deg, #65d7c5 0%, #6f8cff 48%, #8b5cf6 100%);
+}
+
+.status-action-link:hover {
+  box-shadow:
+    0 18px 38px rgba(111, 140, 255, 0.28),
+    0 8px 20px rgba(101, 215, 197, 0.18),
+    inset 0 1px 0 rgba(255, 255, 255, 0.38);
+}
+
+/* Mulai QC / Review Ulang */
+.status-action-neutral {
+  background:
+    radial-gradient(circle at 18% 18%, rgba(255,255,255,0.32), transparent 34%),
+    linear-gradient(135deg, #7ba7ff 0%, #8b5cf6 55%, #c76cf2 100%);
+}
+
+.status-action-neutral:hover {
+  box-shadow:
+    0 18px 38px rgba(139, 92, 246, 0.26),
+    0 8px 20px rgba(123, 167, 255, 0.18),
+    inset 0 1px 0 rgba(255, 255, 255, 0.38);
+}
+
+/* QC Selesai */
+.status-action-success {
+  background:
+    radial-gradient(circle at 18% 18%, rgba(255,255,255,0.32), transparent 34%),
+    linear-gradient(135deg, #45d6bd 0%, #55c7df 45%, #6f8cff 100%);
+}
+
+.status-action-success:hover {
+  box-shadow:
+    0 18px 38px rgba(69, 214, 189, 0.26),
+    0 8px 20px rgba(111, 140, 255, 0.18),
+    inset 0 1px 0 rgba(255, 255, 255, 0.38);
+}
+
+/* Revisi */
+.status-action-danger {
+  background:
+    radial-gradient(circle at 18% 18%, rgba(255,255,255,0.32), transparent 34%),
+    linear-gradient(135deg, #f7b980 0%, #e873aa 48%, #d95b91 100%);
+}
+
+.status-action-danger:hover {
+  box-shadow:
+    0 18px 38px rgba(232, 115, 170, 0.28),
+    0 8px 20px rgba(247, 185, 128, 0.18),
+    inset 0 1px 0 rgba(255, 255, 255, 0.38);
+}
+
+/* Mobile */
+@media (max-width: 640px) {
+  .status-card-actions-premium {
+    flex-direction: column;
+  }
+
+  .status-action-btn {
+    width: 100%;
+    max-width: 260px;
+  }
+}
+/* ===============================
+   PROJECT TOOLS ACTION BUTTON CENTER
+   Edit & Hapus Assigned Task
+   =============================== */
+
+.admin-task-actions-premium {
+  width: 100%;
+  margin-top: 22px !important;
+
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+  gap: 12px !important;
+  flex-wrap: wrap !important;
+}
+
+.admin-task-action-btn {
+  position: relative;
+
+  min-width: 124px;
+  min-height: 48px;
+  padding: 0 16px;
+
+  border: 1px solid rgba(255, 255, 255, 0.44);
+  border-radius: 17px;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+
+  color: #ffffff;
+  font-size: 12.5px;
+  font-weight: 1000;
+  text-decoration: none;
+
+  cursor: pointer;
+  overflow: hidden;
+
+  box-shadow:
+    0 14px 30px rgba(83, 94, 160, 0.16),
+    inset 0 1px 0 rgba(255, 255, 255, 0.32);
+
+  transition: all 0.24s ease;
+}
+
+.admin-task-action-btn::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+
+  background: linear-gradient(
+    120deg,
+    transparent 0%,
+    rgba(255, 255, 255, 0.30) 42%,
+    transparent 72%
+  );
+
+  transform: translateX(-120%);
+  transition: transform 0.55s ease;
+}
+
+.admin-task-action-btn:hover::before {
+  transform: translateX(120%);
+}
+
+.admin-task-action-btn:hover {
+  transform: translateY(-2px);
+}
+
+.admin-task-action-btn:active {
+  transform: translateY(0) scale(0.98);
+}
+
+.admin-task-action-btn span {
+  position: relative;
+  z-index: 2;
+}
+
+.admin-task-action-icon {
+  width: 28px;
+  height: 28px;
+  border-radius: 11px;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  background: rgba(255, 255, 255, 0.22);
+  color: #ffffff;
+  font-size: 12px;
+
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.26);
+}
+
+/* Button Edit */
+.admin-task-action-edit {
+  background:
+    radial-gradient(circle at 18% 18%, rgba(255,255,255,0.30), transparent 34%),
+    linear-gradient(135deg, #65d7c5 0%, #6f8cff 48%, #8b5cf6 100%);
+}
+
+.admin-task-action-edit:hover {
+  box-shadow:
+    0 18px 38px rgba(111, 140, 255, 0.28),
+    0 8px 20px rgba(101, 215, 197, 0.18),
+    inset 0 1px 0 rgba(255, 255, 255, 0.38);
+}
+
+/* Button Hapus */
+.admin-task-action-delete {
+  background:
+    radial-gradient(circle at 18% 18%, rgba(255,255,255,0.32), transparent 34%),
+    linear-gradient(135deg, #f7b980 0%, #e873aa 48%, #d95b91 100%);
+}
+
+.admin-task-action-delete:hover {
+  box-shadow:
+    0 18px 38px rgba(232, 115, 170, 0.28),
+    0 8px 20px rgba(247, 185, 128, 0.18),
+    inset 0 1px 0 rgba(255, 255, 255, 0.38);
+}
+
+/* Mobile */
+@media (max-width: 640px) {
+  .admin-task-actions-premium {
+    flex-direction: column;
+  }
+
+  .admin-task-action-btn {
+    width: 100%;
+    max-width: 260px;
+  }
+}
   </style>
 </head>
 
@@ -5367,7 +6104,7 @@ textarea.admin-report-field {
           </div>
         </div>
 
-        <div class="table-card glass-soft">
+       <div class="table-card glass-soft leaderboard-edit-card">
           <div class="table-head">
             <div>
               <div class="section-kicker">Leaderboard Data</div>
@@ -5380,7 +6117,7 @@ textarea.admin-report-field {
             </button>
           </div>
 
-          <div class="table-wrap">
+        <div class="table-wrap leaderboard-edit-scroll">
             <table class="admin-table">
               <thead>
                 <tr>
@@ -5879,6 +6616,30 @@ textarea.admin-report-field {
     let localDirty = false;
     let currentAdminView = 'leaderboard';
 
+    let isPageChanging = false;
+
+window.addEventListener('beforeunload', () => {
+  isPageChanging = true;
+});
+
+window.addEventListener('pagehide', () => {
+  isPageChanging = true;
+});
+
+function isFetchInterruptionError(error) {
+  const message = String(error?.message || error || '').toLowerCase();
+  const name = String(error?.name || '').toLowerCase();
+
+  return (
+    isPageChanging ||
+    document.visibilityState === 'hidden' ||
+    name.includes('abort') ||
+    message.includes('failed to fetch') ||
+    message.includes('load failed') ||
+    message.includes('networkerror') ||
+    message.includes('aborted')
+  );
+}
     /****************************************************
      * INIT
      ****************************************************/
@@ -6150,25 +6911,26 @@ textarea.admin-report-field {
     }
 
     function recalculateRanking() {
-      leaderboardRaw.sort((a, b) => {
-        return Number(b.Average_Score || 0) - Number(a.Average_Score || 0);
-      });
+  leaderboardRaw.sort((a, b) => {
+    return Number(b.Average_Score || 0) - Number(a.Average_Score || 0);
+  });
 
-      leaderboardRaw = leaderboardRaw.map((row, index) => {
-        const score = clampScore(row.Average_Score);
-        const category = getScoreCategory(score).category;
+  leaderboardRaw = leaderboardRaw.map((row, index) => {
+    const score = clampScore(row.Average_Score);
+    const category = getScoreCategory(score);
 
-        return {
-          ...row,
-          Average_Score: score,
-          Score_Category: category,
-          Rank: index + 1
-        };
-      });
+    return {
+      ...row,
+      Average_Score: score,
+      Score_Category: category,
+      Rank: index + 1,
+      Updated_By_Admin: 'ADMIN_CONTROL_FLOW',
+      Updated_At: new Date().toISOString()
+    };
+  });
 
-      localDirty = true;
-    }
-
+  localDirty = true;
+}
    function addLeaderboardRow() {
   const newId = createLocalId();
 
@@ -6235,9 +6997,10 @@ textarea.admin-report-field {
 
     const next = { ...row };
 
-    if (field === 'Average_Score') {
-      next[field] = clampScore(value);
-      next.Score_Category = getScoreCategory(next[field]).category;
+   if (field === 'Average_Score') {
+  next[field] = clampScore(value);
+  next.Score_Category = getScoreCategory(next[field]);
+
     } else if (field === 'Total_Task') {
       next[field] = Math.max(0, Number(value || 0));
     } else {
@@ -6344,9 +7107,11 @@ function renderTopUser(rows) {
     .sort((a, b) => Number(b.Average_Score || 0) - Number(a.Average_Score || 0))[0];
 
   const score = clampScore(top.Average_Score);
-  const categoryMeta = getScoreCategory(score);
-  const category = categoryMeta.category;
-  const description = categoryMeta.description;
+
+  const categoryDetail = getLeaderboardCategoryDetail(
+    score,
+    top.Score_Category || ''
+  );
 
   box.innerHTML = `
     <div>
@@ -6363,7 +7128,7 @@ function renderTopUser(rows) {
       <div class="winner-score">
         <div class="winner-score-main">
           <span>${score}%</span>
-          <strong>${escapeHtml(category)}</strong>
+          <strong>${escapeHtml(categoryDetail.category)}</strong>
         </div>
         <p class="winner-score-label">Average Score</p>
       </div>
@@ -6371,13 +7136,13 @@ function renderTopUser(rows) {
       <div class="winner-category-desc">
         <h4>
           <i class="fa-solid fa-award"></i>
-          Kategori ${escapeHtml(category)}
+          Kategori ${escapeHtml(categoryDetail.category)}
         </h4>
-        <p>${escapeHtml(description)}</p>
+        <p>${escapeHtml(categoryDetail.description)}</p>
       </div>
     </div>
   `;
-}
+}   
     function renderTable(rows) {
       const tbody = document.getElementById('leaderboardTableBody');
       if (!tbody) return;
@@ -6402,7 +7167,7 @@ function renderTopUser(rows) {
       tbody.innerHTML = rows.map(row => {
         const rank = Number(row.Rank || 0);
         const rankClass = rank === 1 ? 'gold' : rank === 2 ? 'silver' : rank === 3 ? 'bronze' : '';
-        const category = row.Score_Category || getScoreCategory(row.Average_Score).category;
+      const category = row.Score_Category || getScoreCategory(row.Average_Score);
         const rowKey = row._rowKey || row.Leaderboard_ID || row.User_ID || `ROW-${index}`;
 
         return `
@@ -6501,7 +7266,17 @@ function renderTopUser(rows) {
         bestUser
       };
     }
+function getLeaderboardCategoryDetail(score, savedCategory = '') {
+  const computedCategory = getScoreCategory(score);
+  const finalCategory = savedCategory || computedCategory;
+  const meta = getScoreCategoryMeta(finalCategory);
 
+  return {
+    category: meta.label || finalCategory || '-',
+    title: meta.title || 'Performance Category',
+    description: meta.desc || 'Kategori performa belum tersedia.'
+  };
+}
 function getScoreCategoryMeta(category) {
   const value = String(category || '').trim().toUpperCase();
 
@@ -6930,40 +7705,52 @@ function renderReportCandidateCard(row) {
         ${escapeHtml(row.Deskripsi_Tugas || 'Belum ada deskripsi pengerjaan.')}
       </div>
 
-      <div class="report-score-grid">
-        <div class="report-score-item">
-          <span>QC Status</span>
-          <strong>${escapeHtml(row.QC_Status || '-')}</strong>
-        </div>
+     <div class="report-score-grid">
+  <div class="report-score-item">
+    <span>QC Status</span>
+    <strong>${escapeHtml(row.QC_Status || '-')}</strong>
+  </div>
 
-        <div class="report-score-item">
-          <span>Progress</span>
-          <strong>${formatReportNumber(row.Progress_Tugas || 0)}%</strong>
-        </div>
+  <div class="report-score-item">
+    <span>Progress</span>
+    <strong>${formatReportNumber(row.Progress_Tugas || 0)}%</strong>
+  </div>
 
-        <div class="report-score-item">
-          <span>Durasi</span>
-          <strong>${escapeHtml(row.Durasi_Tugas || '-')}</strong>
-        </div>
-      </div>
+  <div class="report-score-item">
+    <span>Durasi</span>
+    <strong>${escapeHtml(row.Durasi_Tugas || '-')}</strong>
+  </div>
+</div>
+      <div class="report-card-actions report-card-actions-premium">
+  ${
+    row.Link_Pengumpulan_Tugas
+      ? `
+        <a 
+          class="report-action-btn report-action-link" 
+          href="${escapeAttribute(row.Link_Pengumpulan_Tugas)}" 
+          target="_blank" 
+          rel="noopener noreferrer"
+        >
+          <span class="report-action-icon">
+            <i class="fa-solid fa-arrow-up-right-from-square"></i>
+          </span>
+          <span>Buka Link</span>
+        </a>
+      `
+      : ''
+  }
 
-      <div class="report-card-actions">
-        ${
-          row.Link_Pengumpulan_Tugas
-            ? `
-              <a class="report-mini-btn primary" href="${escapeAttribute(row.Link_Pengumpulan_Tugas)}" target="_blank" rel="noopener noreferrer">
-                <i class="fa-solid fa-arrow-up-right-from-square"></i>
-                Buka Link
-              </a>
-            `
-            : ''
-        }
-
-        <button class="report-mini-btn primary" type="button" onclick="openReportTaskModal('${escapeAttribute(row.Status_Project_ID)}')">
-          <i class="fa-solid fa-pen-to-square"></i>
-          Buat Report
-        </button>
-      </div>
+  <button 
+    class="report-action-btn report-action-create" 
+    type="button" 
+    onclick="openReportTaskModal('${escapeAttribute(row.Status_Project_ID)}')"
+  >
+    <span class="report-action-icon">
+      <i class="fa-solid fa-pen-to-square"></i>
+    </span>
+    <span>Buat Report</span>
+  </button>
+</div>
     </article>
   `;
 }
@@ -7605,9 +8392,9 @@ function renderStatusProjectCard(row) {
         </div>
       </div>
 
-      <div class="status-card-actions">
-        ${renderStatusProjectActions(row)}
-      </div>
+    <div class="status-card-actions status-card-actions-premium">
+  ${renderStatusProjectActions(row)}
+</div>
     </article>
   `;
 }
@@ -7619,62 +8406,104 @@ function renderStatusProjectActions(row) {
 
   if (row.Link_Pengumpulan_Tugas) {
     buttons += `
-      <a class="status-mini-btn primary" href="${escapeAttribute(row.Link_Pengumpulan_Tugas)}" target="_blank" rel="noopener noreferrer">
-        <i class="fa-solid fa-arrow-up-right-from-square"></i>
-        Buka Link
+      <a 
+        class="status-action-btn status-action-link" 
+        href="${escapeAttribute(row.Link_Pengumpulan_Tugas)}" 
+        target="_blank" 
+        rel="noopener noreferrer"
+      >
+        <span class="status-action-icon">
+          <i class="fa-solid fa-arrow-up-right-from-square"></i>
+        </span>
+        <span>Buka Link</span>
       </a>
     `;
   }
 
   if (row.QC_Status === 'Belum di QC') {
     buttons += `
-      <button class="status-mini-btn" type="button" onclick="updateAdminStatusQC('${id}', 'Sedang di QC')">
-        <i class="fa-solid fa-magnifying-glass-chart"></i>
-        Mulai QC
+      <button 
+        class="status-action-btn status-action-neutral" 
+        type="button" 
+        onclick="updateAdminStatusQC('${id}', 'Sedang di QC')"
+      >
+        <span class="status-action-icon">
+          <i class="fa-solid fa-magnifying-glass-chart"></i>
+        </span>
+        <span>Mulai QC</span>
       </button>
 
-      <button class="status-mini-btn success" type="button" onclick="updateAdminStatusQC('${id}', 'Selesai')">
-        <i class="fa-solid fa-circle-check"></i>
-        QC Selesai
+      <button 
+        class="status-action-btn status-action-success" 
+        type="button" 
+        onclick="updateAdminStatusQC('${id}', 'Selesai')"
+      >
+        <span class="status-action-icon">
+          <i class="fa-solid fa-circle-check"></i>
+        </span>
+        <span>QC Selesai</span>
       </button>
     `;
   }
 
   if (row.QC_Status === 'Sedang di QC') {
     buttons += `
-      <button class="status-mini-btn success" type="button" onclick="updateAdminStatusQC('${id}', 'Selesai')">
-        <i class="fa-solid fa-circle-check"></i>
-        QC Selesai
+      <button 
+        class="status-action-btn status-action-success" 
+        type="button" 
+        onclick="updateAdminStatusQC('${id}', 'Selesai')"
+      >
+        <span class="status-action-icon">
+          <i class="fa-solid fa-circle-check"></i>
+        </span>
+        <span>QC Selesai</span>
       </button>
 
-      <button class="status-mini-btn danger" type="button" onclick="updateAdminStatusQC('${id}', 'Revisi')">
-        <i class="fa-solid fa-rotate-left"></i>
-        Revisi
+      <button 
+        class="status-action-btn status-action-danger" 
+        type="button" 
+        onclick="updateAdminStatusQC('${id}', 'Revisi')"
+      >
+        <span class="status-action-icon">
+          <i class="fa-solid fa-rotate-left"></i>
+        </span>
+        <span>Revisi</span>
       </button>
     `;
   }
 
   if (row.QC_Status === 'Selesai') {
     buttons += `
-      <button class="status-mini-btn" type="button" onclick="updateAdminStatusQC('${id}', 'Sedang di QC')">
-        <i class="fa-solid fa-rotate"></i>
-        Review Ulang
+      <button 
+        class="status-action-btn status-action-neutral" 
+        type="button" 
+        onclick="updateAdminStatusQC('${id}', 'Sedang di QC')"
+      >
+        <span class="status-action-icon">
+          <i class="fa-solid fa-rotate"></i>
+        </span>
+        <span>Review Ulang</span>
       </button>
     `;
   }
 
   if (row.QC_Status === 'Revisi') {
     buttons += `
-      <button class="status-mini-btn primary" type="button" onclick="updateAdminStatusQC('${id}', 'Sedang di QC')">
-        <i class="fa-solid fa-magnifying-glass-chart"></i>
-        QC Lagi
+      <button 
+        class="status-action-btn status-action-link" 
+        type="button" 
+        onclick="updateAdminStatusQC('${id}', 'Sedang di QC')"
+      >
+        <span class="status-action-icon">
+          <i class="fa-solid fa-magnifying-glass-chart"></i>
+        </span>
+        <span>QC Lagi</span>
       </button>
     `;
   }
 
   return buttons;
 }
-
 async function updateAdminStatusQC(statusProjectId, qcStatus) {
   const confirm = await Swal.fire({
     icon: qcStatus === 'Selesai' ? 'success' : qcStatus === 'Revisi' ? 'warning' : 'question',
@@ -8024,17 +8853,29 @@ function renderAssignedTaskCard(row) {
         </div>
       </div>
 
-      <div class="admin-task-actions">
-        <button class="admin-mini-btn primary" type="button" onclick="openAssignedTaskModal('${escapeAttribute(row.Assigned_Task_ID)}')">
-          <i class="fa-solid fa-pen-to-square"></i>
-          Edit
-        </button>
+  <div class="admin-task-actions admin-task-actions-premium">
+  <button 
+    class="admin-task-action-btn admin-task-action-edit" 
+    type="button" 
+    onclick="openAssignedTaskModal('${escapeAttribute(row.Assigned_Task_ID)}')"
+  >
+    <span class="admin-task-action-icon">
+      <i class="fa-solid fa-pen-to-square"></i>
+    </span>
+    <span>Edit</span>
+  </button>
 
-        <button class="admin-mini-btn danger" type="button" onclick="deleteAssignedTaskAdmin('${escapeAttribute(row.Assigned_Task_ID)}')">
-          <i class="fa-solid fa-trash"></i>
-          Hapus
-        </button>
-      </div>
+  <button 
+    class="admin-task-action-btn admin-task-action-delete" 
+    type="button" 
+    onclick="deleteAssignedTaskAdmin('${escapeAttribute(row.Assigned_Task_ID)}')"
+  >
+    <span class="admin-task-action-icon">
+      <i class="fa-solid fa-trash"></i>
+    </span>
+    <span>Hapus</span>
+  </button>
+</div>
     </article>
   `;
 }
@@ -8862,21 +9703,32 @@ function showProjectToolsHelp() {
     `
   });
 }
-    function showError(error) {
-      Swal.fire({
-        icon: 'error',
-        title: 'Data Gagal Diproses',
-        html: `
-          <div style="font-weight:800; color:#59648e; line-height:1.75;">
-            ${escapeHtml(error.message || String(error))}
-            <br><br>
-            Pastikan SCRIPT_URL sudah benar, backend sudah dideploy versi terbaru, dan sheet Leaderboard memiliki header yang sesuai.
-          </div>
-        `,
-        confirmButtonText: 'Saya Mengerti'
-      });
-    }
-function prepareLeaderboardRows(rows) {
+   function showError(error) {
+  console.error('BACKEND ERROR:', error);
+
+  if (isFetchInterruptionError(error)) {
+    toast(
+      'Request Terputus',
+      'Data belum sempat dimuat karena halaman sedang direfresh. Tunggu halaman selesai terbuka lalu klik Muat Ulang lagi.',
+      'warning'
+    );
+    return;
+  }
+
+  Swal.fire({
+    icon: 'error',
+    title: 'Data Gagal Diproses',
+    html: `
+      <div style="font-weight:800; color:#59648e; line-height:1.75;">
+        ${escapeHtml(error.message || String(error))}
+        <br><br>
+        Pastikan SCRIPT_URL sudah benar, backend sudah dideploy versi terbaru, dan struktur sheet sesuai.
+      </div>
+    `,
+    confirmButtonText: 'Saya Mengerti'
+  });
+}
+    function prepareLeaderboardRows(rows) {
   return rows.map((row, index) => {
     const leaderboardId =
       row.Leaderboard_ID ||
