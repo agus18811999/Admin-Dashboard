@@ -5847,6 +5847,1909 @@ textarea.admin-report-field {
     max-width: 260px;
   }
 }
+/* ==================================================
+   ADMIN LEAVE APPROVAL FEATURE
+================================================== */
+
+.admin-leave-hero {
+  position: relative;
+  overflow: hidden;
+  border-radius: 38px;
+  margin-top: 19px;
+  padding: 34px;
+  background:
+    radial-gradient(circle at 14% 18%, rgba(139, 92, 246, 0.16), transparent 34%),
+    radial-gradient(circle at 78% 70%, rgba(232, 115, 170, 0.16), transparent 36%),
+    radial-gradient(circle at 90% 12%, rgba(101, 215, 197, 0.18), transparent 32%),
+    linear-gradient(135deg, rgba(255,255,255,0.34), rgba(255,255,255,0.13));
+  border: 1px solid rgba(255,255,255,0.38);
+}
+
+.admin-leave-hero-content {
+  position: relative;
+  z-index: 2;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 390px;
+  gap: 32px;
+  align-items: center;
+}
+
+.admin-leave-badge {
+  width: fit-content;
+  min-height: 40px;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 0 16px;
+  border-radius: 999px;
+  color: #7654dd;
+  font-size: 12px;
+  font-weight: 1000;
+  letter-spacing: .13em;
+  text-transform: uppercase;
+  background: rgba(255,255,255,0.20);
+  border: 1px solid rgba(255,255,255,0.36);
+}
+
+.admin-leave-title {
+  margin-top: 22px;
+  color: #2d335b;
+  font-family: "Playfair Display", serif;
+  font-size: clamp(54px, 5vw, 76px);
+  line-height: .96;
+  letter-spacing: -.065em;
+  font-weight: 900;
+}
+
+.admin-leave-title span {
+  display: block;
+  width: fit-content;
+  background: linear-gradient(105deg, #5c75ef, #8b5cf6 48%, #db6aa4 82%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.admin-leave-copy {
+  margin-top: 22px;
+  max-width: 760px;
+  color: #667092;
+  font-size: 15px;
+  line-height: 1.85;
+  font-weight: 780;
+}
+
+.admin-leave-visual {
+  min-height: 300px;
+  border-radius: 34px;
+  padding: 18px;
+  position: relative;
+  overflow: hidden;
+  background:
+    radial-gradient(circle at 18% 16%, rgba(255,255,255,0.42), transparent 34%),
+    linear-gradient(135deg, rgba(101,215,197,0.20), rgba(111,140,255,0.20), rgba(232,115,170,0.16));
+  border: 1px solid rgba(255,255,255,0.42);
+  box-shadow: 0 26px 80px rgba(83, 94, 160, 0.16);
+}
+
+.admin-leave-visual-card {
+  position: absolute;
+  inset: 18px;
+  border-radius: 30px;
+  padding: 20px;
+  background: rgba(255,255,255,0.18);
+  border: 1px solid rgba(255,255,255,0.36);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+}
+
+.admin-leave-visual-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.admin-leave-visual-head p {
+  color: #7a82a8;
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: .14em;
+  font-weight: 1000;
+}
+
+.admin-leave-visual-head h3 {
+  margin-top: 6px;
+  color: #2d335b;
+  font-size: 24px;
+  line-height: 1.1;
+  letter-spacing: -.05em;
+  font-weight: 1000;
+}
+
+.admin-leave-visual-icon {
+  width: 60px;
+  height: 60px;
+  border-radius: 22px;
+  display: grid;
+  place-items: center;
+  color: #fff;
+  font-size: 22px;
+  background: linear-gradient(135deg, #65d7c5, #6f8cff 50%, #e873aa);
+}
+
+.admin-leave-flow {
+  margin-top: 24px;
+  display: grid;
+  gap: 12px;
+}
+
+.admin-leave-flow div {
+  min-height: 58px;
+  border-radius: 20px;
+  padding: 0 14px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: #536096;
+  font-size: 13px;
+  font-weight: 1000;
+  background: rgba(255,255,255,0.18);
+  border: 1px solid rgba(255,255,255,0.30);
+}
+
+.admin-leave-flow i {
+  width: 38px;
+  height: 38px;
+  border-radius: 15px;
+  display: grid;
+  place-items: center;
+  color: #fff;
+  background: linear-gradient(135deg, #65d7c5, #6f8cff, #e873aa);
+}
+
+.admin-leave-stats {
+  margin-top: 18px;
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.admin-leave-stat-card {
+  min-height: 118px;
+  border-radius: 28px;
+  padding: 18px;
+  display: grid;
+  align-content: center;
+  gap: 9px;
+}
+
+.admin-leave-stat-card i {
+  width: 44px;
+  height: 44px;
+  border-radius: 17px;
+  display: grid;
+  place-items: center;
+  color: #fff;
+  background: linear-gradient(135deg, #65d7c5, #6f8cff 55%, #e873aa);
+}
+
+.admin-leave-stat-card span {
+  color: #7a82a8;
+  font-size: 10px;
+  font-weight: 1000;
+  text-transform: uppercase;
+  letter-spacing: .12em;
+}
+
+.admin-leave-stat-card strong {
+  color: #2d335b;
+  font-size: 28px;
+  line-height: 1;
+  font-weight: 1000;
+  letter-spacing: -.05em;
+}
+
+.admin-leave-toolbar {
+  margin-top: 18px;
+  border-radius: 30px;
+  padding: 16px;
+  display: grid;
+  grid-template-columns: 1fr 190px 170px auto;
+  gap: 12px;
+  align-items: center;
+}
+
+.admin-leave-search {
+  min-height: 58px;
+  border-radius: 20px;
+  padding: 0 17px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: rgba(255,255,255,0.18);
+  border: 1px solid rgba(255,255,255,0.32);
+}
+
+.admin-leave-search input {
+  width: 100%;
+  border: none;
+  outline: none;
+  background: transparent;
+  color: #29304f;
+  font-size: 14px;
+  font-weight: 850;
+}
+
+.admin-leave-search i {
+  color: #8a94b6;
+}
+
+.admin-leave-select {
+  width: 100%;
+  min-height: 58px;
+  border-radius: 20px;
+  border: 1px solid rgba(255,255,255,0.32);
+  background: rgba(255,255,255,0.18);
+  color: #29304f;
+  padding: 0 15px;
+  outline: none;
+  font-size: 13px;
+  font-weight: 950;
+}
+
+.admin-leave-refresh {
+  min-height: 58px;
+  border-radius: 20px;
+  padding: 0 18px;
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  color: #536096;
+  font-size: 13px;
+  font-weight: 1000;
+  background: rgba(255,255,255,0.18);
+  border: 1px solid rgba(255,255,255,0.34);
+}
+
+.admin-leave-tabs {
+  margin-top: 18px;
+  border-radius: 30px;
+  padding: 14px;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.admin-leave-tab {
+  min-height: 58px;
+  border-radius: 20px;
+  color: #52607f;
+  font-size: 13px;
+  font-weight: 1000;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  background: rgba(255,255,255,.13);
+  border: 1px solid rgba(255,255,255,.30);
+  transition: all .22s ease;
+}
+
+.admin-leave-tab span {
+  min-width: 28px;
+  height: 28px;
+  border-radius: 999px;
+  display: grid;
+  place-items: center;
+  background: rgba(255,255,255,0.18);
+  border: 1px solid rgba(255,255,255,0.26);
+  font-size: 11px;
+}
+
+.admin-leave-tab.active {
+  color: #fff;
+  background:
+    radial-gradient(circle at 18% 18%, rgba(255,255,255,.30), transparent 34%),
+    linear-gradient(135deg, #65d7c5, #6f8cff 48%, #e873aa);
+  box-shadow: 0 18px 44px rgba(111,140,255,.22);
+}
+
+.admin-leave-grid {
+  margin-top: 18px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(520px, 1fr));
+  gap: 18px;
+}
+
+.admin-leave-card {
+  position: relative;
+  overflow: hidden;
+  border-radius: 34px;
+  padding: 22px;
+  min-height: 420px;
+  background:
+    radial-gradient(circle at 12% 12%, rgba(255,255,255,0.30), transparent 34%),
+    radial-gradient(circle at 88% 78%, rgba(232,115,170,0.16), transparent 36%),
+    linear-gradient(145deg, rgba(255,255,255,0.23), rgba(255,255,255,0.09));
+  border: 1px solid rgba(255,255,255,0.38);
+  box-shadow: 0 26px 80px rgba(83, 94, 160, 0.13);
+}
+
+.admin-leave-card-head,
+.admin-leave-card-actions,
+.admin-leave-card-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+}
+
+.admin-leave-user {
+  display: grid;
+  grid-template-columns: 58px 1fr;
+  gap: 14px;
+  align-items: center;
+}
+
+.admin-leave-avatar {
+  width: 58px;
+  height: 58px;
+  border-radius: 22px;
+  display: grid;
+  place-items: center;
+  color: #fff;
+  font-size: 22px;
+  font-weight: 1000;
+  background: linear-gradient(135deg, #65d7c5, #6f8cff, #e873aa);
+}
+
+.admin-leave-user h3 {
+  color: #2d335b;
+  font-size: 22px;
+  line-height: 1.1;
+  font-weight: 1000;
+  letter-spacing: -.04em;
+}
+
+.admin-leave-user p {
+  margin-top: 5px;
+  color: #667092;
+  font-size: 12px;
+  font-weight: 850;
+}
+
+.admin-leave-status-pill {
+  min-height: 38px;
+  padding: 0 12px;
+  border-radius: 999px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 12px;
+  font-weight: 1000;
+}
+
+.admin-leave-status-pill.pengajuan {
+  color: #5e6ed8;
+  background: rgba(111,140,255,0.14);
+  border: 1px solid rgba(111,140,255,0.24);
+}
+
+.admin-leave-status-pill.process {
+  color: #b0762f;
+  background: rgba(247,185,128,0.16);
+  border: 1px solid rgba(247,185,128,0.28);
+}
+
+.admin-leave-status-pill.ditolak {
+  color: #b55273;
+  background: rgba(232,115,170,0.14);
+  border: 1px solid rgba(232,115,170,0.24);
+}
+
+.admin-leave-status-pill.disetujui {
+  color: #2f8a83;
+  background: rgba(101,215,197,0.16);
+  border: 1px solid rgba(101,215,197,0.26);
+}
+
+.admin-leave-card-title {
+  margin-top: 20px;
+  color: #2d335b;
+  font-size: 26px;
+  line-height: 1.1;
+  font-weight: 1000;
+  letter-spacing: -.055em;
+}
+
+.admin-leave-card-meta {
+  margin-top: 8px;
+  color: #667092;
+  font-size: 12.5px;
+  font-weight: 850;
+}
+
+.admin-leave-reason {
+  margin-top: 16px;
+  min-height: 96px;
+  border-radius: 24px;
+  padding: 15px;
+  color: #59648e;
+  font-size: 13px;
+  line-height: 1.7;
+  font-weight: 820;
+  background: rgba(255,255,255,0.16);
+  border: 1px solid rgba(255,255,255,0.28);
+}
+
+.admin-leave-info-grid {
+  margin-top: 14px;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.admin-leave-info {
+  border-radius: 20px;
+  padding: 12px;
+  background: rgba(255,255,255,0.14);
+  border: 1px solid rgba(255,255,255,0.26);
+}
+
+.admin-leave-info span {
+  display: block;
+  color: #7a82a8;
+  font-size: 9.5px;
+  text-transform: uppercase;
+  letter-spacing: .12em;
+  font-weight: 1000;
+}
+
+.admin-leave-info strong {
+  display: block;
+  margin-top: 6px;
+  color: #2d335b;
+  font-size: 12.5px;
+  font-weight: 1000;
+  line-height: 1.35;
+}
+
+.admin-leave-card-actions {
+  margin-top: 18px;
+  flex-wrap: wrap;
+}
+
+.admin-leave-action-btn {
+  min-height: 42px;
+  padding: 0 14px;
+  border-radius: 999px;
+  color: #536096;
+  font-size: 12px;
+  font-weight: 1000;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(255,255,255,0.20);
+  border: 1px solid rgba(255,255,255,0.34);
+}
+
+.admin-leave-action-btn.primary {
+  color: #fff;
+  background: linear-gradient(135deg, #6f8cff, #8b5cf6 54%, #e873aa);
+}
+
+.admin-leave-action-btn.approve {
+  color: #fff;
+  background: linear-gradient(135deg, #65d7c5, #6f8cff);
+}
+
+.admin-leave-action-btn.reject {
+  color: #fff;
+  background: linear-gradient(135deg, #f08ab2, #e873aa);
+}
+
+.admin-leave-empty {
+  grid-column: 1 / -1;
+  min-height: 260px;
+  border-radius: 34px;
+  display: grid;
+  place-items: center;
+  text-align: center;
+  padding: 40px;
+}
+
+.admin-leave-empty-icon {
+  width: 62px;
+  height: 62px;
+  margin: 0 auto 16px;
+  border-radius: 24px;
+  display: grid;
+  place-items: center;
+  color: #fff;
+  background: linear-gradient(135deg, #65d7c5, #6f8cff, #e873aa);
+}
+
+.admin-leave-empty h3 {
+  color: #2d335b;
+  font-size: 24px;
+  font-weight: 1000;
+  letter-spacing: -.04em;
+}
+
+.admin-leave-empty p {
+  margin-top: 8px;
+  color: #667092;
+  font-size: 14px;
+  font-weight: 800;
+}
+
+.admin-leave-decision-modal {
+  padding: 28px;
+  text-align: left;
+}
+
+.admin-leave-modal-header {
+  display: grid;
+  grid-template-columns: 66px 1fr;
+  gap: 16px;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.admin-leave-modal-icon {
+  width: 66px;
+  height: 66px;
+  border-radius: 24px;
+  color: #fff;
+  display: grid;
+  place-items: center;
+  font-size: 24px;
+  background: linear-gradient(135deg, #65d7c5, #6f8cff, #e873aa);
+}
+
+.admin-leave-modal-header h3 {
+  color: #2d335b;
+  font-size: 28px;
+  line-height: 1.1;
+  letter-spacing: -.05em;
+  font-weight: 1000;
+}
+
+.admin-leave-modal-header p {
+  margin-top: 7px;
+  color: #667092;
+  font-size: 13px;
+  line-height: 1.6;
+  font-weight: 800;
+}
+
+.admin-leave-modal-grid {
+  display: grid;
+  gap: 14px;
+}
+
+.admin-leave-modal-field label {
+  display: block;
+  margin-bottom: 8px;
+  color: #59648e;
+  font-size: 12px;
+  font-weight: 1000;
+}
+
+.admin-leave-modal-field textarea,
+.admin-leave-modal-field input {
+  width: 100%;
+  min-height: 56px;
+  border-radius: 20px;
+  border: 1px solid rgba(255,255,255,0.36);
+  background: rgba(255,255,255,0.22);
+  outline: none;
+  padding: 14px;
+  color: #2d335b;
+  font-size: 13px;
+  font-weight: 850;
+}
+
+.admin-leave-modal-field textarea {
+  min-height: 130px;
+  resize: vertical;
+  line-height: 1.7;
+}
+
+@media (max-width: 1180px) {
+  .admin-leave-hero-content,
+  .admin-leave-toolbar {
+    grid-template-columns: 1fr;
+  }
+
+  .admin-leave-stats {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .admin-leave-tabs {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 760px) {
+  .admin-leave-grid,
+  .admin-leave-info-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .admin-leave-visual {
+    display: none;
+  }
+
+  .admin-leave-card-head,
+  .admin-leave-card-actions,
+  .admin-leave-card-footer {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+/* ==================================================
+   ADMIN LEAVE CARD GRID FIX - 2 CARDS PER ROW
+================================================== */
+
+#adminLeaveGrid.admin-leave-grid {
+  display: grid !important;
+  grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  gap: 18px !important;
+  align-items: start !important;
+}
+
+#adminLeaveGrid .admin-leave-card {
+  width: 100% !important;
+  min-width: 0 !important;
+  max-width: none !important;
+  min-height: 410px;
+}
+
+#adminLeaveGrid .admin-leave-empty {
+  grid-column: 1 / -1 !important;
+  width: 100% !important;
+}
+
+@media (max-width: 1180px) {
+  #adminLeaveGrid.admin-leave-grid {
+    grid-template-columns: 1fr !important;
+  }
+}
+/* ==================================================
+   ADMIN LEAVE HERO PREMIUM REVISION
+================================================== */
+
+.admin-leave-hero-v2 {
+  position: relative;
+  overflow: hidden;
+  min-height: 390px;
+  border-radius: 38px;
+  padding: 36px 38px !important;
+  background:
+    radial-gradient(circle at 12% 18%, rgba(139, 92, 246, 0.18), transparent 34%),
+    radial-gradient(circle at 74% 76%, rgba(232, 115, 170, 0.17), transparent 36%),
+    radial-gradient(circle at 92% 14%, rgba(101, 215, 197, 0.20), transparent 32%),
+    linear-gradient(135deg, rgba(255,255,255,0.34), rgba(255,255,255,0.12));
+  border: 1px solid rgba(255,255,255,0.40);
+  box-shadow:
+    0 30px 90px rgba(83, 94, 160, 0.14),
+    inset 0 1px 0 rgba(255,255,255,0.24);
+}
+
+.admin-leave-hero-v2::before {
+  content: "";
+  position: absolute;
+  width: 520px;
+  height: 520px;
+  left: -190px;
+  top: -190px;
+  border-radius: 999px;
+  background: radial-gradient(circle, rgba(111, 140, 255, 0.14), transparent 70%);
+  pointer-events: none;
+}
+
+.admin-leave-hero-v2::after {
+  content: "";
+  position: absolute;
+  width: 480px;
+  height: 480px;
+  right: -160px;
+  bottom: -210px;
+  border-radius: 999px;
+  background: radial-gradient(circle, rgba(232, 115, 170, 0.16), transparent 72%);
+  pointer-events: none;
+}
+
+.admin-leave-hero-content-v2 {
+  position: relative;
+  z-index: 2;
+  display: grid !important;
+  grid-template-columns: minmax(0, 1.05fr) 420px !important;
+  gap: 38px !important;
+  align-items: center !important;
+}
+
+.admin-leave-copy-area-v2 {
+  min-width: 0;
+}
+
+.admin-leave-badge-v2 {
+  width: fit-content;
+  min-height: 42px;
+  padding: 0 17px;
+  border-radius: 999px;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  color: #7654dd;
+  font-size: 12px;
+  font-weight: 1000;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  background: rgba(255,255,255,0.22);
+  border: 1px solid rgba(255,255,255,0.38);
+  box-shadow: 0 14px 34px rgba(111, 140, 255, 0.10);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+}
+
+.admin-leave-title-v2 {
+  margin-top: 24px !important;
+  color: #2d335b;
+  font-family: "Playfair Display", serif;
+  font-size: clamp(54px, 5vw, 76px) !important;
+  line-height: 0.98 !important;
+  letter-spacing: -0.07em !important;
+  font-weight: 900;
+}
+
+.admin-leave-title-v2 span {
+  display: block;
+  width: fit-content;
+  line-height: 1.04;
+  padding-bottom: 0.08em;
+  background: linear-gradient(105deg, #5c75ef, #8b5cf6 48%, #db6aa4 84%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.admin-leave-copy-v2 {
+  margin-top: 22px !important;
+  max-width: 780px;
+  color: #667092;
+  font-size: 15.5px !important;
+  line-height: 1.82 !important;
+  font-weight: 780;
+  letter-spacing: -0.01em;
+}
+
+.admin-leave-hero-chips {
+  margin-top: 24px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.admin-leave-chip {
+  min-height: 42px;
+  padding: 0 14px;
+  border-radius: 999px;
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  color: #536096;
+  font-size: 12px;
+  font-weight: 950;
+  background: rgba(255,255,255,0.18);
+  border: 1px solid rgba(255,255,255,0.34);
+  box-shadow: 0 12px 30px rgba(83, 94, 160, 0.08);
+}
+
+.admin-leave-chip i {
+  color: #7654dd;
+}
+/* ==================================================
+   ADMIN LEAVE CARD PREMIUM V4
+================================================== */
+
+#adminLeaveGrid .admin-leave-card-premium-v4 {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+  min-height: 470px;
+  padding: 22px !important;
+  border-radius: 34px !important;
+  cursor: pointer;
+  background:
+    radial-gradient(circle at 12% 10%, rgba(255,255,255,0.34), transparent 34%),
+    radial-gradient(circle at 88% 78%, rgba(232,115,170,0.16), transparent 38%),
+    linear-gradient(145deg, rgba(255,255,255,0.25), rgba(255,255,255,0.09)) !important;
+  border: 1px solid rgba(255,255,255,0.42) !important;
+  box-shadow:
+    0 28px 82px rgba(83, 94, 160, 0.13),
+    inset 0 1px 0 rgba(255,255,255,0.24) !important;
+  transition: transform 0.24s ease, box-shadow 0.24s ease, border-color 0.24s ease;
+}
+
+#adminLeaveGrid .admin-leave-card-premium-v4:hover {
+  transform: translateY(-5px);
+  border-color: rgba(255,255,255,0.56) !important;
+  box-shadow:
+    0 36px 105px rgba(83, 94, 160, 0.18),
+    inset 0 1px 0 rgba(255,255,255,0.28) !important;
+}
+
+.admin-leave-card-bg {
+  position: absolute;
+  border-radius: 999px;
+  pointer-events: none;
+  z-index: -1;
+}
+
+.admin-leave-card-bg.bg-a {
+  width: 300px;
+  height: 300px;
+  left: -130px;
+  top: -140px;
+  background: radial-gradient(circle, rgba(111,140,255,0.18), transparent 70%);
+}
+
+.admin-leave-card-bg.bg-b {
+  width: 330px;
+  height: 330px;
+  right: -160px;
+  bottom: -170px;
+  background: radial-gradient(circle, rgba(232,115,170,0.17), transparent 72%);
+}
+
+.admin-leave-card-top-v4 {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 16px;
+}
+
+.admin-leave-user-v4 {
+  display: grid;
+  grid-template-columns: 64px 1fr;
+  gap: 14px;
+  align-items: center;
+  min-width: 0;
+}
+
+.admin-leave-avatar-v4 {
+  width: 64px;
+  height: 64px;
+  border-radius: 24px;
+  display: grid;
+  place-items: center;
+  color: #fff;
+  font-size: 24px;
+  font-weight: 1000;
+  background:
+    radial-gradient(circle at 20% 18%, rgba(255,255,255,0.36), transparent 36%),
+    linear-gradient(135deg, #65d7c5, #6f8cff 50%, #e873aa);
+  box-shadow: 0 20px 46px rgba(111,140,255,0.22);
+}
+
+.admin-leave-user-info-v4 {
+  min-width: 0;
+}
+
+.admin-leave-user-info-v4 span {
+  display: block;
+  color: #7a82a8;
+  font-size: 10px;
+  font-weight: 1000;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.admin-leave-user-info-v4 h3 {
+  margin-top: 5px;
+  color: #2d335b;
+  font-size: 23px;
+  line-height: 1.08;
+  font-weight: 1000;
+  letter-spacing: -0.045em;
+}
+
+.admin-leave-user-info-v4 p {
+  margin-top: 6px;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 7px;
+  color: #667092;
+  font-size: 12px;
+  font-weight: 850;
+}
+
+.admin-leave-user-info-v4 p i {
+  font-size: 4px;
+  color: rgba(102,112,146,0.55);
+}
+
+.admin-leave-status-pill-v4 {
+  flex: none;
+  min-height: 40px;
+  padding: 0 13px;
+  border-radius: 999px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 12px;
+  font-weight: 1000;
+  white-space: nowrap;
+  background: rgba(255,255,255,0.20);
+  border: 1px solid rgba(255,255,255,0.36);
+  box-shadow: 0 12px 30px rgba(83,94,160,0.08);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+}
+
+.admin-leave-status-pill-v4.pengajuan {
+  color: #5e6ed8;
+  background: rgba(111,140,255,0.14);
+  border-color: rgba(111,140,255,0.24);
+}
+
+.admin-leave-status-pill-v4.process {
+  color: #a46e2d;
+  background: rgba(247,185,128,0.16);
+  border-color: rgba(247,185,128,0.28);
+}
+
+.admin-leave-status-pill-v4.ditolak {
+  color: #b55273;
+  background: rgba(232,115,170,0.14);
+  border-color: rgba(232,115,170,0.24);
+}
+
+.admin-leave-status-pill-v4.disetujui {
+  color: #2f8a83;
+  background: rgba(101,215,197,0.16);
+  border-color: rgba(101,215,197,0.26);
+}
+
+.admin-leave-card-main-v4 {
+  position: relative;
+  z-index: 2;
+  margin-top: 24px;
+  display: grid;
+  grid-template-columns: 66px 1fr;
+  gap: 16px;
+  align-items: start;
+}
+
+.admin-leave-main-icon-v4 {
+  width: 66px;
+  height: 66px;
+  border-radius: 25px;
+  display: grid;
+  place-items: center;
+  color: #fff;
+  font-size: 24px;
+  box-shadow: 0 20px 46px rgba(111,140,255,0.20);
+}
+
+.admin-leave-main-icon-v4.pengajuan {
+  background: linear-gradient(135deg, #65d7c5, #6f8cff 55%, #8b5cf6);
+}
+
+.admin-leave-main-icon-v4.process {
+  background: linear-gradient(135deg, #f7b980, #8b5cf6);
+}
+
+.admin-leave-main-icon-v4.ditolak {
+  background: linear-gradient(135deg, #e873aa, #8b5cf6);
+}
+
+.admin-leave-main-icon-v4.disetujui {
+  background: linear-gradient(135deg, #65d7c5, #6f8cff);
+}
+
+.admin-leave-title-area-v4 {
+  min-width: 0;
+}
+
+.admin-leave-type-row-v4 {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 10px;
+}
+
+.admin-leave-type-row-v4 span {
+  min-height: 30px;
+  padding: 0 10px;
+  border-radius: 999px;
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  color: #536096;
+  font-size: 11px;
+  font-weight: 950;
+  background: rgba(255,255,255,0.18);
+  border: 1px solid rgba(255,255,255,0.32);
+}
+
+.admin-leave-type-row-v4 i {
+  color: #7654dd;
+}
+
+.admin-leave-card-title-v4 {
+  margin: 0 !important;
+  color: #2d335b;
+  font-size: 24px !important;
+  line-height: 1.08 !important;
+  letter-spacing: -0.055em !important;
+  font-weight: 1000 !important;
+  word-break: break-word;
+}
+
+.admin-leave-card-meta-v4 {
+  margin-top: 9px !important;
+  color: #667092;
+  font-size: 12.5px !important;
+  line-height: 1.45;
+  font-weight: 850;
+}
+
+.admin-leave-reason-v4 {
+  position: relative;
+  z-index: 2;
+  margin-top: 20px !important;
+  min-height: 118px;
+  border-radius: 26px !important;
+  padding: 16px !important;
+  background:
+    radial-gradient(circle at 12% 12%, rgba(255,255,255,0.28), transparent 34%),
+    linear-gradient(145deg, rgba(255,255,255,0.18), rgba(255,255,255,0.08)) !important;
+  border: 1px solid rgba(255,255,255,0.32) !important;
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.18);
+}
+
+.admin-leave-reason-head-v4 {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  min-height: 28px;
+  padding: 0 10px;
+  border-radius: 999px;
+  color: #7654dd;
+  font-size: 10px;
+  font-weight: 1000;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  background: rgba(139,92,246,0.10);
+  border: 1px solid rgba(139,92,246,0.14);
+}
+
+.admin-leave-reason-v4 p {
+  margin-top: 12px;
+  color: #59648e;
+  font-size: 13.2px;
+  line-height: 1.7;
+  font-weight: 820;
+}
+
+.admin-leave-info-grid-v4 {
+  position: relative;
+  z-index: 2;
+  margin-top: 16px !important;
+  display: grid !important;
+  grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+  gap: 10px !important;
+}
+
+.admin-leave-info-v4 {
+  border-radius: 22px !important;
+  padding: 12px !important;
+  display: grid;
+  grid-template-columns: 38px 1fr;
+  gap: 10px;
+  align-items: center;
+  background:
+    radial-gradient(circle at 12% 12%, rgba(255,255,255,0.24), transparent 34%),
+    linear-gradient(145deg, rgba(255,255,255,0.16), rgba(255,255,255,0.07)) !important;
+  border: 1px solid rgba(255,255,255,0.30) !important;
+}
+
+.admin-leave-info-icon-v4 {
+  width: 38px;
+  height: 38px;
+  border-radius: 15px;
+  display: grid;
+  place-items: center;
+  color: #fff;
+  font-size: 13px;
+  background: linear-gradient(135deg, #7ba7ff, #8b5cf6);
+  box-shadow: 0 12px 28px rgba(139,92,246,0.16);
+}
+
+.admin-leave-info-v4 span {
+  display: block;
+  color: #7a82a8;
+  font-size: 9.5px;
+  text-transform: uppercase;
+  letter-spacing: 0.13em;
+  font-weight: 1000;
+}
+
+.admin-leave-info-v4 strong {
+  display: block;
+  margin-top: 5px;
+  color: #2d335b;
+  font-size: 12px;
+  line-height: 1.35;
+  font-weight: 1000;
+}
+
+.admin-leave-card-actions-v4 {
+  position: relative;
+  z-index: 2;
+  margin-top: 18px !important;
+  padding-top: 16px;
+  border-top: 1px solid rgba(255,255,255,0.28);
+  display: flex !important;
+  align-items: center;
+  justify-content: flex-start !important;
+  gap: 10px !important;
+  flex-wrap: wrap;
+}
+
+.admin-leave-action-btn-v4 {
+  min-height: 40px !important;
+  padding: 0 13px !important;
+  border-radius: 999px !important;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  color: #536096;
+  font-size: 11.5px !important;
+  font-weight: 1000 !important;
+  text-decoration: none;
+  background: rgba(255,255,255,0.20) !important;
+  border: 1px solid rgba(255,255,255,0.34) !important;
+  box-shadow: 0 12px 28px rgba(83,94,160,0.08);
+  transition: all 0.22s ease;
+}
+
+.admin-leave-action-btn-v4:hover {
+  transform: translateY(-2px);
+}
+
+.admin-leave-action-btn-v4.detail {
+  color: #536096;
+}
+
+.admin-leave-action-btn-v4.evidence {
+  color: #6b56d8;
+}
+
+.admin-leave-action-btn-v4.process {
+  color: #fff;
+  background: linear-gradient(135deg, #7ba7ff, #8b5cf6 55%, #d36ac3) !important;
+  box-shadow: 0 14px 34px rgba(139,92,246,0.18);
+}
+
+.admin-leave-action-btn-v4.approve {
+  color: #fff;
+  background: linear-gradient(135deg, #65d7c5, #6f8cff) !important;
+  box-shadow: 0 14px 34px rgba(101,215,197,0.20);
+}
+
+.admin-leave-action-btn-v4.reject {
+  color: #fff;
+  background: linear-gradient(135deg, #f08ab2, #e873aa) !important;
+  box-shadow: 0 14px 34px rgba(232,115,170,0.18);
+}
+
+@media (max-width: 760px) {
+  #adminLeaveGrid .admin-leave-card-premium-v4 {
+    padding: 18px !important;
+    border-radius: 28px !important;
+  }
+
+  .admin-leave-card-top-v4,
+  .admin-leave-card-actions-v4 {
+    flex-direction: column;
+    align-items: flex-start !important;
+  }
+
+  .admin-leave-card-main-v4 {
+    grid-template-columns: 1fr;
+  }
+
+  .admin-leave-info-grid-v4 {
+    grid-template-columns: 1fr !important;
+  }
+
+  .admin-leave-action-btn-v4 {
+    width: 100%;
+  }
+}
+
+/* RIGHT VISUAL */
+.admin-leave-visual-v2 {
+  position: relative;
+  height: 360px !important;
+  min-height: 320px !important;
+  border-radius: 34px;
+  overflow: hidden;
+  isolation: isolate;
+  background:
+    radial-gradient(circle at 18% 16%, rgba(255,255,255,0.42), transparent 34%),
+    radial-gradient(circle at 86% 78%, rgba(232, 115, 170, 0.20), transparent 38%),
+    linear-gradient(135deg, rgba(101,215,197,0.20), rgba(111,140,255,0.21), rgba(232,115,170,0.16));
+  border: 1px solid rgba(255,255,255,0.42);
+  box-shadow: 0 26px 80px rgba(83, 94, 160, 0.16);
+}
+
+.admin-leave-visual-orb {
+  position: absolute;
+  border-radius: 999px;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.admin-leave-visual-orb.orb-a {
+  width: 210px;
+  height: 210px;
+  left: -80px;
+  top: -80px;
+  background: radial-gradient(circle, rgba(255,255,255,0.34), transparent 70%);
+}
+
+.admin-leave-visual-orb.orb-b {
+  width: 250px;
+  height: 250px;
+  right: -100px;
+  bottom: -110px;
+  background: radial-gradient(circle, rgba(139,92,246,0.18), transparent 72%);
+}
+
+.admin-leave-visual-card-v2 {
+  position: absolute !important;
+  inset: 18px !important;
+  z-index: 3;
+  padding: 18px !important;
+  border-radius: 30px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  background:
+    radial-gradient(circle at 20% 16%, rgba(255,255,255,0.34), transparent 34%),
+    linear-gradient(145deg, rgba(255,255,255,0.25), rgba(255,255,255,0.10));
+  border: 1px solid rgba(255,255,255,0.40);
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,0.24),
+    0 18px 50px rgba(83, 94, 160, 0.12);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+}
+
+.admin-leave-visual-head-v2 {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+  flex: none;
+}
+
+.admin-leave-visual-head-v2 p {
+  color: #7a82a8;
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  font-weight: 1000;
+}
+
+.admin-leave-visual-head-v2 h3 {
+  margin-top: 6px;
+  color: #2d335b;
+  font-size: 22px;
+  line-height: 1.08;
+  letter-spacing: -0.05em;
+  font-weight: 1000;
+}
+
+.admin-leave-visual-icon-v2 {
+  width: 58px;
+  height: 58px;
+  border-radius: 22px;
+  display: grid;
+  place-items: center;
+  color: #fff;
+  font-size: 22px;
+  flex: none;
+  background:
+    radial-gradient(circle at 20% 18%, rgba(255,255,255,0.36), transparent 36%),
+    linear-gradient(135deg, #65d7c5, #6f8cff 48%, #e873aa);
+  box-shadow: 0 20px 46px rgba(111,140,255,0.24);
+}
+
+.admin-leave-flow-v2 {
+  margin-top: 17px !important;
+  display: grid !important;
+  gap: 10px !important;
+}
+
+.admin-leave-flow-row {
+  min-height: 58px;
+  display: grid;
+  grid-template-columns: 46px 1fr;
+  gap: 12px;
+  align-items: center;
+  padding: 8px 12px;
+  border-radius: 21px;
+  background: rgba(255,255,255,0.18);
+  border: 1px solid rgba(255,255,255,0.30);
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.16);
+}
+
+.admin-leave-flow-icon {
+  width: 46px;
+  height: 46px;
+  border-radius: 18px;
+  display: grid;
+  place-items: center;
+  color: #fff;
+  font-size: 15px;
+  box-shadow: 0 15px 34px rgba(83,94,160,0.14);
+}
+
+.admin-leave-flow-icon.request {
+  background: linear-gradient(135deg, #65d7c5, #6f8cff);
+}
+
+.admin-leave-flow-icon.process {
+  background: linear-gradient(135deg, #7ba7ff, #8b5cf6);
+}
+
+.admin-leave-flow-icon.decision {
+  background: linear-gradient(135deg, #8b5cf6, #e873aa);
+}
+
+.admin-leave-flow-row strong {
+  display: block;
+  color: #2d335b;
+  font-size: 13.5px;
+  font-weight: 1000;
+  line-height: 1.2;
+}
+
+.admin-leave-flow-row span {
+  display: block;
+  margin-top: 4px;
+  color: #667092;
+  font-size: 11.5px;
+  line-height: 1.35;
+  font-weight: 820;
+}
+
+@media (max-width: 1180px) {
+  .admin-leave-hero-content-v2 {
+    grid-template-columns: 1fr !important;
+  }
+
+  .admin-leave-visual-v2 {
+    max-width: 540px;
+  }
+}
+
+@media (max-width: 760px) {
+  .admin-leave-hero-v2 {
+    padding: 26px !important;
+    border-radius: 30px;
+  }
+
+  .admin-leave-visual-v2 {
+    display: none;
+  }
+
+  .admin-leave-title-v2 {
+    font-size: 48px !important;
+  }
+}
+/* ==================================================
+   ADMIN LEAVE CARD CLEAN V5
+   Remove requested-by header, move user info to meta row,
+   center action buttons
+================================================== */
+
+#adminLeaveGrid .admin-leave-card-clean-v5 {
+  min-height: 430px !important;
+  padding: 24px !important;
+}
+
+.admin-leave-card-top-clean-v5 {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+}
+
+.admin-leave-type-pill-clean-v5 {
+  min-height: 40px;
+  padding: 0 13px;
+  border-radius: 999px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: #536096;
+  font-size: 12px;
+  font-weight: 1000;
+  background: rgba(255,255,255,0.20);
+  border: 1px solid rgba(255,255,255,0.36);
+  box-shadow: 0 12px 30px rgba(83,94,160,0.08);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+}
+
+.admin-leave-type-pill-clean-v5 i {
+  color: #7654dd;
+}
+
+.admin-leave-card-main-clean-v5 {
+  margin-top: 26px !important;
+  align-items: center !important;
+}
+
+.admin-leave-card-clean-v5 .admin-leave-card-meta-v4 {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 11px !important;
+}
+
+.admin-leave-card-clean-v5 .admin-leave-card-meta-v4 i {
+  color: #7654dd;
+}
+
+.admin-leave-mini-meta-v5 {
+  margin-top: 12px;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 9px;
+}
+
+.admin-leave-mini-meta-v5 span {
+  min-height: 32px;
+  padding: 0 11px;
+  border-radius: 999px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: #536096;
+  font-size: 11.5px;
+  font-weight: 950;
+  background: rgba(255,255,255,0.19);
+  border: 1px solid rgba(255,255,255,0.32);
+  box-shadow: 0 10px 24px rgba(83,94,160,0.07);
+}
+
+.admin-leave-mini-meta-v5 span i {
+  color: #7654dd;
+}
+
+.admin-leave-card-actions-center-v5 {
+  justify-content: center !important;
+  align-items: center !important;
+  text-align: center;
+  gap: 12px !important;
+}
+
+.admin-leave-card-actions-center-v5 .admin-leave-action-btn-v4 {
+  min-width: 104px;
+  justify-content: center !important;
+}
+
+@media (max-width: 760px) {
+  .admin-leave-card-top-clean-v5 {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .admin-leave-card-actions-center-v5 {
+    width: 100%;
+    justify-content: center !important;
+  }
+
+  .admin-leave-card-actions-center-v5 .admin-leave-action-btn-v4 {
+    width: 100%;
+  }
+}
+/* ==================================================
+   ADMIN LEAVE MODAL PREMIUM
+================================================== */
+
+.admin-leave-swal-premium {
+  border-radius: 34px !important;
+  padding: 0 !important;
+  overflow: hidden !important;
+  background:
+    radial-gradient(circle at 14% 18%, rgba(139, 92, 246, 0.12), transparent 34%),
+    radial-gradient(circle at 82% 76%, rgba(232, 115, 170, 0.13), transparent 36%),
+    linear-gradient(135deg, rgba(255,255,255,0.96), rgba(255,245,252,0.92)) !important;
+  border: 1px solid rgba(255,255,255,0.62) !important;
+  box-shadow: 0 36px 120px rgba(35, 42, 85, 0.28) !important;
+}
+
+.admin-leave-swal-premium .swal2-html-container {
+  margin: 0 !important;
+  padding: 0 !important;
+  overflow: visible !important;
+}
+
+.admin-leave-swal-premium .swal2-actions {
+  margin: 0 !important;
+  padding: 22px 30px 30px !important;
+  gap: 12px !important;
+}
+
+.admin-leave-swal-confirm,
+.admin-leave-swal-cancel {
+  min-height: 48px !important;
+  border-radius: 999px !important;
+  padding: 0 24px !important;
+  font-size: 13px !important;
+  font-weight: 1000 !important;
+  border: none !important;
+}
+
+.admin-leave-swal-confirm {
+  background: linear-gradient(135deg, #6f8cff, #8b5cf6 54%, #e873aa) !important;
+  box-shadow: 0 16px 40px rgba(139, 92, 246, 0.22) !important;
+}
+
+.admin-leave-swal-cancel {
+  color: #536096 !important;
+  background: rgba(255,255,255,0.55) !important;
+  border: 1px solid rgba(83,96,150,0.12) !important;
+}
+
+.admin-leave-detail-premium,
+.admin-leave-decision-premium {
+  position: relative;
+  overflow: hidden;
+  padding: 34px;
+  text-align: left;
+  isolation: isolate;
+}
+
+.admin-leave-detail-glow {
+  position: absolute;
+  border-radius: 999px;
+  pointer-events: none;
+  z-index: -1;
+}
+
+.admin-leave-detail-glow.glow-a {
+  width: 360px;
+  height: 360px;
+  left: -150px;
+  top: -150px;
+  background: radial-gradient(circle, rgba(111,140,255,0.15), transparent 70%);
+}
+
+.admin-leave-detail-glow.glow-b {
+  width: 390px;
+  height: 390px;
+  right: -160px;
+  bottom: -170px;
+  background: radial-gradient(circle, rgba(232,115,170,0.16), transparent 72%);
+}
+
+.admin-leave-detail-header,
+.admin-leave-decision-header {
+  display: grid;
+  grid-template-columns: 74px 1fr;
+  gap: 18px;
+  align-items: center;
+}
+
+.admin-leave-detail-icon {
+  width: 74px;
+  height: 74px;
+  border-radius: 28px;
+  display: grid;
+  place-items: center;
+  color: #fff;
+  font-size: 28px;
+  box-shadow: 0 22px 54px rgba(111,140,255,0.24);
+}
+
+.admin-leave-detail-icon.pengajuan {
+  background: linear-gradient(135deg, #65d7c5, #6f8cff 55%, #8b5cf6);
+}
+
+.admin-leave-detail-icon.process {
+  background: linear-gradient(135deg, #f7b980, #8b5cf6);
+}
+
+.admin-leave-detail-icon.ditolak {
+  background: linear-gradient(135deg, #e873aa, #8b5cf6);
+}
+
+.admin-leave-detail-icon.disetujui {
+  background: linear-gradient(135deg, #65d7c5, #6f8cff);
+}
+
+.admin-leave-detail-badge {
+  width: fit-content;
+  min-height: 34px;
+  padding: 0 12px;
+  border-radius: 999px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 11px;
+  font-weight: 1000;
+  background: rgba(255,255,255,0.50);
+  border: 1px solid rgba(255,255,255,0.58);
+}
+
+.admin-leave-detail-badge.pengajuan {
+  color: #5e6ed8;
+}
+
+.admin-leave-detail-badge.process {
+  color: #a46e2d;
+}
+
+.admin-leave-detail-badge.ditolak {
+  color: #b55273;
+}
+
+.admin-leave-detail-badge.disetujui {
+  color: #2f8a83;
+}
+
+.admin-leave-detail-title-wrap h2,
+.admin-leave-decision-header h2 {
+  margin-top: 12px;
+  color: #2d335b;
+  font-size: 28px;
+  line-height: 1.12;
+  letter-spacing: -0.055em;
+  font-weight: 1000;
+}
+
+.admin-leave-detail-title-wrap p,
+.admin-leave-decision-header p {
+  margin-top: 8px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  color: #667092;
+  font-size: 13px;
+  font-weight: 850;
+}
+
+.admin-leave-detail-summary {
+  margin-top: 24px;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.admin-leave-detail-summary div {
+  min-height: 104px;
+  border-radius: 24px;
+  padding: 16px;
+  background: rgba(255,255,255,0.38);
+  border: 1px solid rgba(255,255,255,0.50);
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.24);
+}
+
+.admin-leave-detail-summary i {
+  width: 38px;
+  height: 38px;
+  border-radius: 15px;
+  display: grid;
+  place-items: center;
+  color: #fff;
+  background: linear-gradient(135deg, #65d7c5, #6f8cff 56%, #e873aa);
+}
+
+.admin-leave-detail-summary span {
+  display: block;
+  margin-top: 12px;
+  color: #7a82a8;
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.13em;
+  font-weight: 1000;
+}
+
+.admin-leave-detail-summary strong {
+  display: block;
+  margin-top: 6px;
+  color: #2d335b;
+  font-size: 13px;
+  font-weight: 1000;
+}
+
+.admin-leave-detail-grid {
+  margin-top: 18px;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.admin-leave-detail-box {
+  min-height: 96px;
+  border-radius: 24px;
+  padding: 16px;
+  background: rgba(255,255,255,0.38);
+  border: 1px solid rgba(255,255,255,0.50);
+}
+
+.admin-leave-detail-box.is-long {
+  grid-column: 1 / -1;
+}
+
+.admin-leave-detail-box-head {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 30px;
+  padding: 0 10px;
+  border-radius: 999px;
+  color: #7654dd;
+  font-size: 10px;
+  font-weight: 1000;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  background: rgba(139,92,246,0.10);
+  border: 1px solid rgba(139,92,246,0.14);
+}
+
+.admin-leave-detail-box-value {
+  margin-top: 12px;
+  color: #2d335b;
+  font-size: 13.5px;
+  line-height: 1.75;
+  font-weight: 850;
+  word-break: break-word;
+}
+
+.admin-leave-decision-status-box {
+  margin-top: 24px;
+  min-height: 96px;
+  border-radius: 26px;
+  display: grid;
+  grid-template-columns: 1fr 44px 1fr;
+  align-items: center;
+  gap: 14px;
+  padding: 18px;
+  background: rgba(255,255,255,0.38);
+  border: 1px solid rgba(255,255,255,0.50);
+}
+
+.admin-leave-decision-status-box div {
+  border-radius: 20px;
+  padding: 14px;
+  background: rgba(255,255,255,0.32);
+  border: 1px solid rgba(255,255,255,0.38);
+}
+
+.admin-leave-decision-status-box span {
+  color: #7a82a8;
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.13em;
+  font-weight: 1000;
+}
+
+.admin-leave-decision-status-box strong {
+  display: block;
+  margin-top: 6px;
+  color: #2d335b;
+  font-size: 15px;
+  font-weight: 1000;
+}
+
+.admin-leave-decision-status-box > i {
+  width: 44px;
+  height: 44px;
+  border-radius: 17px;
+  display: grid;
+  place-items: center;
+  color: #fff;
+  background: linear-gradient(135deg, #6f8cff, #8b5cf6, #e873aa);
+}
+
+.admin-leave-decision-form {
+  margin-top: 18px;
+  display: grid;
+  gap: 14px;
+}
+
+.admin-leave-decision-field {
+  border-radius: 24px;
+  padding: 16px;
+  background: rgba(255,255,255,0.38);
+  border: 1px solid rgba(255,255,255,0.50);
+}
+
+.admin-leave-decision-field label {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 10px;
+}
+
+.admin-leave-decision-field label span {
+  color: #2d335b;
+  font-size: 13px;
+  font-weight: 1000;
+}
+
+.admin-leave-decision-field label small {
+  min-height: 26px;
+  padding: 0 10px;
+  border-radius: 999px;
+  display: inline-flex;
+  align-items: center;
+  color: #7654dd;
+  font-size: 10px;
+  font-weight: 1000;
+  background: rgba(139,92,246,0.10);
+}
+
+.admin-leave-decision-field textarea {
+  width: 100%;
+  min-height: 128px;
+  resize: vertical;
+  border: none;
+  outline: none;
+  border-radius: 20px;
+  padding: 15px;
+  color: #2d335b;
+  font-size: 13.5px;
+  line-height: 1.7;
+  font-weight: 850;
+  background: rgba(255,255,255,0.46);
+  border: 1px solid rgba(255,255,255,0.46);
+}
+
+.admin-leave-decision-field textarea::placeholder {
+  color: rgba(102,112,146,0.65);
+}
+
+@media (max-width: 760px) {
+  .admin-leave-detail-premium,
+  .admin-leave-decision-premium {
+    padding: 24px;
+  }
+
+  .admin-leave-detail-header,
+  .admin-leave-decision-header,
+  .admin-leave-decision-status-box {
+    grid-template-columns: 1fr;
+  }
+
+  .admin-leave-detail-summary,
+  .admin-leave-detail-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .admin-leave-detail-box.is-long {
+    grid-column: auto;
+  }
+}
   </style>
 </head>
 
@@ -5917,6 +7820,10 @@ textarea.admin-report-field {
         <button class="nav-btn" type="button" data-admin-view="reportTask" onclick="switchAdminView('reportTask')">
   <i class="fa-solid fa-file-signature"></i>
   <span>Report Task</span>
+</button>
+<button class="nav-btn" type="button" data-admin-view="leaveApproval" onclick="switchAdminView('leaveApproval')">
+  <i class="fa-solid fa-person-walking-arrow-right"></i>
+  <span>Leave Approval</span>
 </button>
       </div>
 
@@ -6588,6 +8495,189 @@ textarea.admin-report-field {
     </div>
   </section>
 </section>
+<section id="leaveApprovalView" class="admin-view-section">
+  <div class="admin-leave-hero glass admin-leave-hero-v2">
+  <div class="admin-leave-hero-content admin-leave-hero-content-v2">
+    <div class="admin-leave-copy-area-v2">
+      <div class="admin-leave-badge admin-leave-badge-v2">
+        <i class="fa-solid fa-person-walking-arrow-right"></i>
+        <span>Leave Approval Center</span>
+      </div>
+
+      <h1 class="admin-leave-title admin-leave-title-v2">
+        Leave Request
+        <span>Approval Hub.</span>
+      </h1>
+
+      <p class="admin-leave-copy admin-leave-copy-v2">
+        Kelola pengajuan izin, sakit, cuti, dan ketidakhadiran user dalam satu approval flow
+        yang rapi. Admin dapat memproses, menyetujui, menolak, serta memberikan alasan keputusan
+        yang langsung tampil di dashboard user.
+      </p>
+
+      <div class="admin-leave-hero-chips">
+        <div class="admin-leave-chip">
+          <i class="fa-solid fa-inbox"></i>
+          <span>Review Request</span>
+        </div>
+
+        <div class="admin-leave-chip">
+          <i class="fa-solid fa-user-shield"></i>
+          <span>Admin Decision</span>
+        </div>
+
+        <div class="admin-leave-chip">
+          <i class="fa-solid fa-bell"></i>
+          <span>User Updated</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="admin-leave-visual admin-leave-visual-v2">
+      <div class="admin-leave-visual-orb orb-a"></div>
+      <div class="admin-leave-visual-orb orb-b"></div>
+
+      <div class="admin-leave-visual-card admin-leave-visual-card-v2">
+        <div class="admin-leave-visual-head admin-leave-visual-head-v2">
+          <div>
+            <p>Approval Flow</p>
+            <h3>Request Review</h3>
+          </div>
+
+          <div class="admin-leave-visual-icon admin-leave-visual-icon-v2">
+            <i class="fa-solid fa-clipboard-check"></i>
+          </div>
+        </div>
+
+        <div class="admin-leave-flow admin-leave-flow-v2">
+          <div class="admin-leave-flow-row">
+            <div class="admin-leave-flow-icon request">
+              <i class="fa-solid fa-inbox"></i>
+            </div>
+            <div>
+              <strong>Pengajuan</strong>
+              <span>Request masuk dari user.</span>
+            </div>
+          </div>
+
+          <div class="admin-leave-flow-row">
+            <div class="admin-leave-flow-icon process">
+              <i class="fa-solid fa-spinner"></i>
+            </div>
+            <div>
+              <strong>Process</strong>
+              <span>Admin melakukan review.</span>
+            </div>
+          </div>
+
+          <div class="admin-leave-flow-row">
+            <div class="admin-leave-flow-icon decision">
+              <i class="fa-solid fa-circle-check"></i>
+            </div>
+            <div>
+              <strong>Decision</strong>
+              <span>Disetujui atau ditolak.</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+  <div class="admin-leave-stats">
+    <div class="admin-leave-stat-card glass-soft">
+      <i class="fa-solid fa-layer-group"></i>
+      <span>Total Request</span>
+      <strong id="adminLeaveTotal">0</strong>
+    </div>
+
+    <div class="admin-leave-stat-card glass-soft">
+      <i class="fa-solid fa-inbox"></i>
+      <span>Pengajuan</span>
+      <strong id="adminLeavePengajuan">0</strong>
+    </div>
+
+    <div class="admin-leave-stat-card glass-soft">
+      <i class="fa-solid fa-spinner"></i>
+      <span>Process</span>
+      <strong id="adminLeaveProcess">0</strong>
+    </div>
+
+    <div class="admin-leave-stat-card glass-soft">
+      <i class="fa-solid fa-circle-xmark"></i>
+      <span>Ditolak</span>
+      <strong id="adminLeaveDitolak">0</strong>
+    </div>
+
+    <div class="admin-leave-stat-card glass-soft">
+      <i class="fa-solid fa-circle-check"></i>
+      <span>Disetujui</span>
+      <strong id="adminLeaveDisetujui">0</strong>
+    </div>
+  </div>
+
+  <div class="admin-leave-toolbar glass-soft">
+    <div class="admin-leave-search">
+      <i class="fa-solid fa-magnifying-glass"></i>
+      <input id="adminLeaveSearchInput" type="text" placeholder="Cari nama user, divisi, tipe izin, alasan, atau status..." />
+    </div>
+
+    <select id="adminLeaveTypeFilter" class="admin-leave-select">
+      <option value="">Semua Jenis Izin</option>
+      <option value="Izin">Izin</option>
+      <option value="Sakit">Sakit</option>
+      <option value="Cuti">Cuti</option>
+      <option value="Tidak Hadir">Tidak Hadir</option>
+      <option value="Keperluan Keluarga">Keperluan Keluarga</option>
+      <option value="Keperluan Kampus">Keperluan Kampus</option>
+      <option value="Lainnya">Lainnya</option>
+    </select>
+
+    <input id="adminLeaveDateFilter" class="admin-leave-select" type="date" />
+
+    <button id="adminReloadLeaveBtn" class="admin-leave-refresh" type="button">
+  <i class="fa-solid fa-rotate"></i>
+  Refresh
+</button>
+  </div>
+
+  <div class="admin-leave-tabs glass-soft">
+    <button class="admin-leave-tab active" data-admin-leave-status="Pengajuan">
+      <i class="fa-solid fa-inbox"></i>
+      Pengajuan
+      <span id="adminLeaveTabPengajuanCount">0</span>
+    </button>
+
+    <button class="admin-leave-tab" data-admin-leave-status="Process">
+      <i class="fa-solid fa-spinner"></i>
+      Process
+      <span id="adminLeaveTabProcessCount">0</span>
+    </button>
+
+    <button class="admin-leave-tab" data-admin-leave-status="Ditolak">
+      <i class="fa-solid fa-circle-xmark"></i>
+      Ditolak
+      <span id="adminLeaveTabDitolakCount">0</span>
+    </button>
+
+    <button class="admin-leave-tab" data-admin-leave-status="Disetujui">
+      <i class="fa-solid fa-circle-check"></i>
+      Disetujui
+      <span id="adminLeaveTabDisetujuiCount">0</span>
+    </button>
+  </div>
+
+  <div id="adminLeaveGrid" class="admin-leave-grid">
+    <div class="admin-leave-empty glass-soft">
+      <div class="admin-leave-empty-icon">
+        <i class="fa-solid fa-spinner fa-spin"></i>
+      </div>
+      <h3>Memuat Leave Request</h3>
+      <p>Data pengajuan izin sedang dimuat dari database.</p>
+    </div>
+  </div>
+</section>
     </main>
   </div>
 
@@ -6595,7 +8685,7 @@ textarea.admin-report-field {
     /****************************************************
      * CONFIG
      ****************************************************/
-
+const ADMIN_KEY = 'CONTROLFLOW_ADMIN_2026';
     const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbz8EdVB5DiUTKtQb1LqDk4-RBkS3AMCCizs4WZsAmBwtTulaHAIq4kN-KfigM4gfIfX/exec';
 
     const POSITION_OPTIONS = [
@@ -6640,6 +8730,888 @@ function isFetchInterruptionError(error) {
     message.includes('aborted')
   );
 }
+/****************************************************
+ * ADMIN LEAVE APPROVAL FRONTEND
+ ****************************************************/
+let adminLeaveLoaded = false;
+let adminLeaveEventsReady = false;
+let adminLeaveRaw = [];
+let adminLeaveFiltered = [];
+let adminLeaveCurrentStatus = 'Pengajuan';
+let adminLeaveLoading = false;
+
+function initAdminLeaveApprovalEvents() {
+  if (adminLeaveEventsReady) return;
+  adminLeaveEventsReady = true;
+
+  const searchInput = document.getElementById('adminLeaveSearchInput');
+  const typeFilter = document.getElementById('adminLeaveTypeFilter');
+  const dateFilter = document.getElementById('adminLeaveDateFilter');
+  const reloadBtn = document.getElementById('adminReloadLeaveBtn');
+
+  if (searchInput) {
+    searchInput.addEventListener('input', adminDebounce(applyAdminLeaveFilters, 200));
+  }
+
+  if (typeFilter) {
+    typeFilter.addEventListener('change', applyAdminLeaveFilters);
+  }
+
+  if (dateFilter) {
+    dateFilter.addEventListener('change', applyAdminLeaveFilters);
+  }
+
+  if (reloadBtn) {
+    reloadBtn.onclick = safeReloadAdminLeaveRequests;
+  }
+
+  document.querySelectorAll('.admin-leave-tab').forEach(btn => {
+    btn.onclick = () => {
+      switchAdminLeaveStatus(btn.dataset.adminLeaveStatus || btn.dataset.adminLeaveStatus || btn.dataset.adminLeaveStatus);
+    };
+  });
+
+  document.querySelectorAll('.admin-leave-tab').forEach(btn => {
+    btn.addEventListener('click', () => {
+      switchAdminLeaveStatus(btn.dataset.adminLeaveStatus || 'Pengajuan');
+    });
+  });
+}
+async function safeReloadAdminLeaveRequests() {
+  if (adminLeaveLoading) return;
+
+  try {
+    showLoading(
+      'Memuat Ulang Leave Approval',
+      'Data pengajuan izin sedang disinkronkan ulang dari Spreadsheet.'
+    );
+
+    await loadAdminLeaveRequests({ silent: true });
+
+    hideLoading();
+
+    toast(
+      'Leave Approval Diperbarui',
+      'Data pengajuan izin berhasil dimuat ulang.',
+      'success'
+    );
+
+  } catch (error) {
+    hideLoading();
+    showAdminLeaveError(error);
+  }
+}
+async function loadAdminLeaveRequests(options = {}) {
+  if (adminLeaveLoading) return;
+
+  adminLeaveLoading = true;
+
+  try {
+    if (!options.silent) {
+      showLoading(
+        'Memuat Leave Approval',
+        'Data pengajuan izin dan cuti sedang dimuat dari Spreadsheet.'
+      );
+    }
+
+    const response = await sendToBackend({
+      action: 'admin_get_leave_requests',
+      adminKey: ADMIN_KEY,
+      timestamp: Date.now()
+    });
+
+    if (response.status !== 'success') {
+      throw new Error(response.message || 'Gagal memuat leave request.');
+    }
+
+    adminLeaveRaw = Array.isArray(response.data)
+      ? response.data.map(normalizeAdminLeaveRow)
+      : [];
+
+    adminLeaveLoaded = true;
+
+    updateAdminLeaveStats(adminLeaveRaw);
+    applyAdminLeaveFilters();
+
+    if (!options.silent) {
+      hideLoading();
+      toast('Leave Approval Dimuat', 'Data pengajuan izin berhasil diperbarui.', 'success');
+    }
+
+  } catch (error) {
+    if (!options.silent) {
+      hideLoading();
+    }
+
+    renderAdminLeaveError(error);
+    showAdminLeaveError(error);
+
+  } finally {
+    adminLeaveLoading = false;
+  }
+}
+function switchAdminLeaveStatus(status) {
+  adminLeaveCurrentStatus = status || 'Pengajuan';
+
+  document.querySelectorAll('.admin-leave-tab').forEach(btn => {
+    btn.classList.toggle('active', btn.dataset.adminLeaveStatus === adminLeaveCurrentStatus);
+  });
+
+  applyAdminLeaveFilters();
+}
+
+function applyAdminLeaveFilters() {
+  const search = String(document.getElementById('adminLeaveSearchInput')?.value || '').trim().toLowerCase();
+  const type = String(document.getElementById('adminLeaveTypeFilter')?.value || '').trim();
+  const date = String(document.getElementById('adminLeaveDateFilter')?.value || '').trim();
+
+  adminLeaveFiltered = adminLeaveRaw.filter(item => {
+    const matchStatus = item.Leave_Status === adminLeaveCurrentStatus;
+    const matchType = !type || item.Leave_Type === type;
+    const matchDate = !date || item.Start_Date === date || item.End_Date === date;
+
+    const combined = [
+      item.Leave_ID,
+      item.Nama_User,
+      item.Divisi_User,
+      item.Posisi_User,
+      item.Email_User,
+      item.Leave_Type,
+      item.Leave_Title,
+      item.Start_Date,
+      item.End_Date,
+      item.Reason,
+      item.Leave_Status,
+      item.Admin_Decision_Reason,
+      item.Admin_Notes
+    ].join(' ').toLowerCase();
+
+    const matchSearch = !search || combined.includes(search);
+
+    return matchStatus && matchType && matchDate && matchSearch;
+  });
+
+  renderAdminLeaveGrid(adminLeaveFiltered);
+}
+
+function updateAdminLeaveStats(rows) {
+  const summary = {
+    total: rows.length,
+    Pengajuan: 0,
+    Process: 0,
+    Ditolak: 0,
+    Disetujui: 0
+  };
+
+  rows.forEach(row => {
+    const status = normalizeAdminLeaveStatus(row.Leave_Status);
+    if (summary[status] !== undefined) {
+      summary[status]++;
+    }
+  });
+
+  adminSetText('adminLeaveTotal', summary.total);
+  adminSetText('adminLeavePengajuan', summary.Pengajuan);
+  adminSetText('adminLeaveProcess', summary.Process);
+  adminSetText('adminLeaveDitolak', summary.Ditolak);
+  adminSetText('adminLeaveDisetujui', summary.Disetujui);
+
+  adminSetText('adminLeaveTabPengajuanCount', summary.Pengajuan);
+  adminSetText('adminLeaveTabProcessCount', summary.Process);
+  adminSetText('adminLeaveTabDitolakCount', summary.Ditolak);
+  adminSetText('adminLeaveTabDisetujuiCount', summary.Disetujui);
+}
+
+function renderAdminLeaveLoading() {
+  const grid = document.getElementById('adminLeaveGrid');
+  if (!grid) return;
+
+  grid.innerHTML = `
+    <div class="admin-leave-empty glass-soft">
+      <div class="admin-leave-empty-icon">
+        <i class="fa-solid fa-spinner fa-spin"></i>
+      </div>
+      <h3>Memuat Leave Request</h3>
+      <p>Data pengajuan izin sedang dimuat dari database.</p>
+    </div>
+  `;
+}
+
+function renderAdminLeaveError(error) {
+  const grid = document.getElementById('adminLeaveGrid');
+  if (!grid) return;
+
+  grid.innerHTML = `
+    <div class="admin-leave-empty glass-soft">
+      <div class="admin-leave-empty-icon">
+        <i class="fa-solid fa-triangle-exclamation"></i>
+      </div>
+      <h3>Gagal Memuat Leave Request</h3>
+      <p>${adminEscapeHtml(error?.message || 'Terjadi kesalahan saat memuat data.')}</p>
+    </div>
+  `;
+}
+
+function renderAdminLeaveGrid(rows) {
+  const grid = document.getElementById('adminLeaveGrid');
+  if (!grid) return;
+
+  if (!rows || !rows.length) {
+    grid.innerHTML = `
+      <div class="admin-leave-empty glass-soft">
+        <div class="admin-leave-empty-icon">
+          <i class="fa-solid fa-inbox"></i>
+        </div>
+        <h3>Belum ada data ${adminEscapeHtml(adminLeaveCurrentStatus)}.</h3>
+        <p>Pengajuan izin akan muncul sesuai status yang dipilih.</p>
+      </div>
+    `;
+    return;
+  }
+
+  grid.innerHTML = rows.map(renderAdminLeaveCard).join('');
+}
+function syncAdminLeaveAfterStatusUpdate(response, leaveId, nextStatus, reason, notes) {
+  if (response && Array.isArray(response.rows)) {
+    adminLeaveRaw = response.rows.map(normalizeAdminLeaveRow);
+  } else if (response && response.data) {
+    const updatedRow = normalizeAdminLeaveRow(response.data);
+
+    const index = adminLeaveRaw.findIndex(row => {
+      return String(row.Leave_ID) === String(leaveId);
+    });
+
+    if (index >= 0) {
+      adminLeaveRaw[index] = updatedRow;
+    } else {
+      adminLeaveRaw.unshift(updatedRow);
+    }
+  } else {
+    adminLeaveRaw = adminLeaveRaw.map(row => {
+      if (String(row.Leave_ID) !== String(leaveId)) return row;
+
+      return normalizeAdminLeaveRow({
+        ...row,
+        Leave_Status: nextStatus,
+        Admin_Decision_Reason: reason || row.Admin_Decision_Reason || '',
+        Admin_Notes: notes || row.Admin_Notes || '',
+        Reviewed_By_Admin: 'ADMIN_CONTROL_FLOW',
+        Reviewed_At: new Date().toISOString(),
+        Updated_At: new Date().toISOString()
+      });
+    });
+  }
+
+  updateAdminLeaveStats(adminLeaveRaw);
+  switchAdminLeaveStatus(nextStatus);
+}
+function renderAdminLeaveCard(item) {
+  const statusMeta = getAdminLeaveStatusMeta(item.Leave_Status);
+  const heroIcon = statusMeta.heroIcon || statusMeta.icon || 'fa-file-signature';
+  const totalDays = Number(item.Total_Days || 0);
+  const hasEvidence = Boolean(item.Evidence_Link);
+  const normalizedStatus = normalizeAdminLeaveStatus(item.Leave_Status);
+
+  return `
+    <article class="admin-leave-card admin-leave-card-premium-v4 admin-leave-card-clean-v5 glass-soft" onclick="openAdminLeaveDetail('${adminEscapeAttribute(item.Leave_ID)}')">
+      <div class="admin-leave-card-bg bg-a"></div>
+      <div class="admin-leave-card-bg bg-b"></div>
+
+      <div class="admin-leave-card-top-clean-v5">
+        <div class="admin-leave-type-pill-clean-v5">
+          <i class="fa-solid fa-tag"></i>
+          <span>${adminEscapeHtml(item.Leave_Type || '-')}</span>
+        </div>
+
+        <div class="admin-leave-status-pill admin-leave-status-pill-v4 ${statusMeta.className}">
+          <i class="fa-solid ${statusMeta.icon}"></i>
+          <span>${adminEscapeHtml(statusMeta.label)}</span>
+        </div>
+      </div>
+
+      <div class="admin-leave-card-main-v4 admin-leave-card-main-clean-v5">
+        <div class="admin-leave-main-icon-v4 ${statusMeta.className}">
+          <i class="fa-solid ${heroIcon}"></i>
+        </div>
+
+        <div class="admin-leave-title-area-v4">
+          <h2 class="admin-leave-card-title admin-leave-card-title-v4">
+            ${adminEscapeHtml(item.Leave_Title || '-')}
+          </h2>
+
+          <p class="admin-leave-card-meta admin-leave-card-meta-v4">
+            <i class="fa-solid fa-calendar-days"></i>
+            ${adminEscapeHtml(formatAdminLeaveDateRange(item.Start_Date, item.End_Date))}
+          </p>
+
+          <div class="admin-leave-mini-meta-v5">
+            <span>
+              <i class="fa-solid fa-hourglass-half"></i>
+              ${totalDays} hari
+            </span>
+
+            <span>
+              <i class="fa-solid fa-user"></i>
+              ${adminEscapeHtml(item.Nama_User || '-')} • ${adminEscapeHtml(item.Divisi_User || '-')}
+            </span>
+          </div>
+        </div>
+      </div>
+
+      <div class="admin-leave-reason admin-leave-reason-v4">
+        <div class="admin-leave-reason-head-v4">
+          <i class="fa-solid fa-align-left"></i>
+          <span>Reason Summary</span>
+        </div>
+
+        <p>
+          ${adminEscapeHtml(truncateAdminLeaveText(item.Reason || '-', 220))}
+        </p>
+      </div>
+
+      <div class="admin-leave-info-grid admin-leave-info-grid-v4">
+        <div class="admin-leave-info admin-leave-info-v4">
+          <div class="admin-leave-info-icon-v4">
+            <i class="fa-solid fa-calendar-day"></i>
+          </div>
+          <div>
+            <span>Start Date</span>
+            <strong>${adminEscapeHtml(formatAdminLeaveDate(item.Start_Date))}</strong>
+          </div>
+        </div>
+
+        <div class="admin-leave-info admin-leave-info-v4">
+          <div class="admin-leave-info-icon-v4">
+            <i class="fa-solid fa-calendar-check"></i>
+          </div>
+          <div>
+            <span>End Date</span>
+            <strong>${adminEscapeHtml(formatAdminLeaveDate(item.End_Date))}</strong>
+          </div>
+        </div>
+
+        <div class="admin-leave-info admin-leave-info-v4">
+          <div class="admin-leave-info-icon-v4">
+            <i class="fa-solid fa-hourglass-half"></i>
+          </div>
+          <div>
+            <span>Total Leave</span>
+            <strong>${totalDays} hari</strong>
+          </div>
+        </div>
+      </div>
+
+      <div class="admin-leave-card-actions admin-leave-card-actions-v4 admin-leave-card-actions-center-v5">
+        <button class="admin-leave-action-btn admin-leave-action-btn-v4 detail" type="button" onclick="event.stopPropagation(); openAdminLeaveDetail('${adminEscapeAttribute(item.Leave_ID)}')">
+          <i class="fa-solid fa-eye"></i>
+          Detail
+        </button>
+
+        ${
+          hasEvidence
+            ? `
+              <a class="admin-leave-action-btn admin-leave-action-btn-v4 evidence" href="${adminEscapeAttribute(item.Evidence_Link)}" target="_blank" rel="noopener noreferrer" onclick="event.stopPropagation();">
+                <i class="fa-solid fa-paperclip"></i>
+                Bukti
+              </a>
+            `
+            : ''
+        }
+
+        ${
+          normalizedStatus === 'Pengajuan'
+            ? `
+              <button class="admin-leave-action-btn admin-leave-action-btn-v4 process" type="button" onclick="event.stopPropagation(); openAdminLeaveDecisionModal('${adminEscapeAttribute(item.Leave_ID)}', 'Process')">
+                <i class="fa-solid fa-spinner"></i>
+                Process
+              </button>
+            `
+            : ''
+        }
+
+        ${
+          normalizedStatus === 'Process'
+            ? `
+              <button class="admin-leave-action-btn admin-leave-action-btn-v4 approve" type="button" onclick="event.stopPropagation(); openAdminLeaveDecisionModal('${adminEscapeAttribute(item.Leave_ID)}', 'Disetujui')">
+                <i class="fa-solid fa-circle-check"></i>
+                Setujui
+              </button>
+
+              <button class="admin-leave-action-btn admin-leave-action-btn-v4 reject" type="button" onclick="event.stopPropagation(); openAdminLeaveDecisionModal('${adminEscapeAttribute(item.Leave_ID)}', 'Ditolak')">
+                <i class="fa-solid fa-circle-xmark"></i>
+                Tolak
+              </button>
+            `
+            : ''
+        }
+      </div>
+    </article>
+  `;
+}
+function openAdminLeaveDetail(leaveId) {
+  const item = adminLeaveRaw.find(row => String(row.Leave_ID) === String(leaveId));
+
+  if (!item) {
+    Swal.fire({
+      icon: 'error',
+      title: 'Data Tidak Ditemukan',
+      text: 'Leave request tidak ditemukan.',
+      confirmButtonText: 'Oke'
+    });
+    return;
+  }
+
+  const statusMeta = getAdminLeaveStatusMeta(item.Leave_Status);
+  const totalDays = Number(item.Total_Days || 0);
+
+  Swal.fire({
+    width: 980,
+    showConfirmButton: true,
+    confirmButtonText: 'Tutup Detail',
+    customClass: {
+      popup: 'admin-leave-swal-premium',
+      confirmButton: 'admin-leave-swal-confirm'
+    },
+    html: `
+      <div class="admin-leave-detail-premium">
+        <div class="admin-leave-detail-glow glow-a"></div>
+        <div class="admin-leave-detail-glow glow-b"></div>
+
+        <div class="admin-leave-detail-header">
+          <div class="admin-leave-detail-icon ${statusMeta.className}">
+            <i class="fa-solid ${statusMeta.heroIcon || statusMeta.icon}"></i>
+          </div>
+
+          <div class="admin-leave-detail-title-wrap">
+            <div class="admin-leave-detail-badge ${statusMeta.className}">
+              <i class="fa-solid ${statusMeta.icon}"></i>
+              ${adminEscapeHtml(statusMeta.label)}
+            </div>
+
+            <h2>${adminEscapeHtml(item.Leave_Title || '-')}</h2>
+
+            <p>
+              ${adminEscapeHtml(item.Nama_User || '-')} 
+              <span>•</span>
+              ${adminEscapeHtml(item.Divisi_User || '-')} 
+              <span>•</span>
+              ${adminEscapeHtml(item.Posisi_User || '-')}
+            </p>
+          </div>
+        </div>
+
+        <div class="admin-leave-detail-summary">
+          <div>
+            <i class="fa-solid fa-tag"></i>
+            <span>Jenis Izin</span>
+            <strong>${adminEscapeHtml(item.Leave_Type || '-')}</strong>
+          </div>
+
+          <div>
+            <i class="fa-solid fa-calendar-day"></i>
+            <span>Mulai</span>
+            <strong>${adminEscapeHtml(formatAdminLeaveDate(item.Start_Date))}</strong>
+          </div>
+
+          <div>
+            <i class="fa-solid fa-calendar-check"></i>
+            <span>Selesai</span>
+            <strong>${adminEscapeHtml(formatAdminLeaveDate(item.End_Date))}</strong>
+          </div>
+
+          <div>
+            <i class="fa-solid fa-hourglass-half"></i>
+            <span>Total</span>
+            <strong>${totalDays} hari</strong>
+          </div>
+        </div>
+
+        <div class="admin-leave-detail-grid">
+          ${buildAdminLeaveDetailBox('Alasan Pengajuan', item.Reason, {
+            long: true,
+            icon: 'fa-align-left'
+          })}
+
+          ${buildAdminLeaveDetailBox('Kontak Saat Izin', item.Contact_During_Leave || '-', {
+            icon: 'fa-phone'
+          })}
+
+          ${buildAdminLeaveDetailBox('Handover / Catatan Pekerjaan', item.Handover_Note || '-', {
+            long: true,
+            icon: 'fa-clipboard-list'
+          })}
+
+          ${buildAdminLeaveDetailBox('Bukti Pendukung', item.Evidence_Link || '-', {
+            long: true,
+            icon: 'fa-paperclip'
+          })}
+
+          ${buildAdminLeaveDetailBox('Alasan Keputusan Admin', item.Admin_Decision_Reason || '-', {
+            long: true,
+            icon: 'fa-user-shield'
+          })}
+
+          ${buildAdminLeaveDetailBox('Catatan Internal Admin', item.Admin_Notes || '-', {
+            long: true,
+            icon: 'fa-note-sticky'
+          })}
+        </div>
+      </div>
+    `
+  });
+}
+function buildAdminLeaveDetailBox(label, value, options = {}) {
+  const isLong = options.long === true;
+  const icon = options.icon || 'fa-circle-info';
+
+  return `
+    <div class="admin-leave-detail-box ${isLong ? 'is-long' : ''}">
+      <div class="admin-leave-detail-box-head">
+        <i class="fa-solid ${icon}"></i>
+        <span>${adminEscapeHtml(label)}</span>
+      </div>
+
+      <div class="admin-leave-detail-box-value">
+        ${adminEscapeHtml(value || '-')}
+      </div>
+    </div>
+  `;
+}
+async function openAdminLeaveDecisionModal(leaveId, nextStatus) {
+  const item = adminLeaveRaw.find(row => String(row.Leave_ID) === String(leaveId));
+
+  if (!item) {
+    Swal.fire({
+      icon: 'error',
+      title: 'Data Tidak Ditemukan',
+      text: 'Leave request tidak ditemukan.',
+      confirmButtonText: 'Oke'
+    });
+    return;
+  }
+
+  const statusMeta = getAdminLeaveStatusMeta(nextStatus);
+  const isFinalDecision = nextStatus === 'Disetujui' || nextStatus === 'Ditolak';
+
+  let submittedReason = '';
+  let submittedNotes = '';
+
+  const result = await Swal.fire({
+    width: 920,
+    showCancelButton: true,
+    confirmButtonText: 'Simpan Status',
+    cancelButtonText: 'Batal',
+    showLoaderOnConfirm: true,
+    allowOutsideClick: () => !Swal.isLoading(),
+    customClass: {
+      popup: 'admin-leave-swal-premium',
+      confirmButton: 'admin-leave-swal-confirm',
+      cancelButton: 'admin-leave-swal-cancel'
+    },
+    html: `
+      <div class="admin-leave-decision-premium">
+        <div class="admin-leave-detail-glow glow-a"></div>
+        <div class="admin-leave-detail-glow glow-b"></div>
+
+        <div class="admin-leave-decision-header">
+          <div class="admin-leave-detail-icon ${statusMeta.className}">
+            <i class="fa-solid ${statusMeta.heroIcon || statusMeta.icon}"></i>
+          </div>
+
+          <div>
+            <div class="admin-leave-detail-badge ${statusMeta.className}">
+              <i class="fa-solid ${statusMeta.icon}"></i>
+              Status Baru: ${adminEscapeHtml(statusMeta.label)}
+            </div>
+
+            <h2>${adminEscapeHtml(item.Leave_Title || '-')}</h2>
+
+            <p>
+              ${adminEscapeHtml(item.Nama_User || '-')}
+              <span>•</span>
+              ${adminEscapeHtml(item.Leave_Type || '-')}
+              <span>•</span>
+              ${adminEscapeHtml(formatAdminLeaveDateRange(item.Start_Date, item.End_Date))}
+            </p>
+          </div>
+        </div>
+
+        <div class="admin-leave-decision-status-box">
+          <div>
+            <span>Status Sebelumnya</span>
+            <strong>${adminEscapeHtml(normalizeAdminLeaveStatus(item.Leave_Status))}</strong>
+          </div>
+
+          <i class="fa-solid fa-arrow-right"></i>
+
+          <div>
+            <span>Status Baru</span>
+            <strong>${adminEscapeHtml(nextStatus)}</strong>
+          </div>
+        </div>
+
+        <div class="admin-leave-decision-form">
+          <div class="admin-leave-decision-field">
+            <label>
+              <span>Alasan Keputusan Admin</span>
+              <small>${isFinalDecision ? 'Wajib' : 'Opsional'}</small>
+            </label>
+
+            <textarea 
+              id="adminLeaveDecisionReasonInput" 
+              placeholder="Tulis alasan keputusan admin agar user memahami hasil review..."
+            ></textarea>
+          </div>
+
+          <div class="admin-leave-decision-field">
+            <label>
+              <span>Catatan Internal Admin</span>
+              <small>Opsional</small>
+            </label>
+
+            <textarea 
+              id="adminLeaveNotesInput" 
+              placeholder="Tambahkan catatan internal untuk dokumentasi admin..."
+            ></textarea>
+          </div>
+        </div>
+      </div>
+    `,
+    preConfirm: async () => {
+      const reason = document.getElementById('adminLeaveDecisionReasonInput')?.value.trim() || '';
+      const notes = document.getElementById('adminLeaveNotesInput')?.value.trim() || '';
+
+      if (isFinalDecision && !reason) {
+        Swal.showValidationMessage('Alasan keputusan wajib diisi untuk status Disetujui atau Ditolak.');
+        return false;
+      }
+
+      submittedReason = reason;
+      submittedNotes = notes;
+
+      try {
+        const response = await sendToBackend({
+          action: 'admin_update_leave_status',
+          adminKey: ADMIN_KEY,
+          leave: {
+            Leave_ID: leaveId,
+            Leave_Status: nextStatus,
+            Admin_Decision_Reason: reason,
+            Admin_Notes: notes,
+            Reviewed_By_Admin: 'ADMIN_CONTROL_FLOW'
+          }
+        });
+
+        if (response.status !== 'success') {
+          throw new Error(response.message || 'Gagal memperbarui status izin.');
+        }
+
+        return response;
+
+      } catch (error) {
+        Swal.showValidationMessage(error.message || 'Gagal memperbarui status izin.');
+        return false;
+      }
+    }
+  });
+
+  if (!result.isConfirmed) return;
+
+  await Swal.fire({
+    icon: 'success',
+    title: 'Status Berhasil Diperbarui',
+    text: `Leave request berhasil diubah menjadi ${nextStatus}.`,
+    confirmButtonText: 'Oke'
+  });
+
+  syncAdminLeaveAfterStatusUpdate(
+    result.value,
+    leaveId,
+    nextStatus,
+    submittedReason,
+    submittedNotes
+  );
+}
+/****************************************************
+ * ADMIN LEAVE HELPERS
+ ****************************************************/
+
+function normalizeAdminLeaveRow(row) {
+  return {
+    Leave_ID: row.Leave_ID || '',
+    User_ID: row.User_ID || '',
+    Nama_User: row.Nama_User || '',
+    Divisi_User: row.Divisi_User || '',
+    Posisi_User: row.Posisi_User || '',
+    Email_User: row.Email_User || '',
+    Leave_Type: row.Leave_Type || '',
+    Leave_Title: row.Leave_Title || '',
+    Start_Date: normalizeAdminLeaveDate(row.Start_Date),
+    End_Date: normalizeAdminLeaveDate(row.End_Date),
+    Total_Days: Number(row.Total_Days || 0),
+    Reason: row.Reason || '',
+    Evidence_Link: row.Evidence_Link || '',
+    Contact_During_Leave: row.Contact_During_Leave || '',
+    Handover_Note: row.Handover_Note || '',
+    Leave_Status: normalizeAdminLeaveStatus(row.Leave_Status),
+    Admin_Decision_Reason: row.Admin_Decision_Reason || '',
+    Admin_Notes: row.Admin_Notes || '',
+    Reviewed_By_Admin: row.Reviewed_By_Admin || '',
+    Reviewed_At: row.Reviewed_At || '',
+    Created_At: row.Created_At || '',
+    Updated_At: row.Updated_At || ''
+  };
+}
+
+function normalizeAdminLeaveStatus(status) {
+  const clean = String(status || '').trim().toLowerCase();
+
+  if (clean === 'process' || clean === 'proses' || clean === 'diproses') return 'Process';
+  if (clean === 'ditolak' || clean === 'rejected' || clean === 'reject') return 'Ditolak';
+  if (clean === 'disetujui' || clean === 'approved' || clean === 'approve') return 'Disetujui';
+
+  return 'Pengajuan';
+}
+
+function getAdminLeaveStatusMeta(status) {
+  const normalized = normalizeAdminLeaveStatus(status);
+
+  if (normalized === 'Process') {
+    return {
+      label: 'Process',
+      className: 'process',
+      icon: 'fa-spinner',
+      heroIcon: 'fa-spinner'
+    };
+  }
+
+  if (normalized === 'Ditolak') {
+    return {
+      label: 'Ditolak',
+      className: 'ditolak',
+      icon: 'fa-circle-xmark',
+      heroIcon: 'fa-ban'
+    };
+  }
+
+  if (normalized === 'Disetujui') {
+    return {
+      label: 'Disetujui',
+      className: 'disetujui',
+      icon: 'fa-circle-check',
+      heroIcon: 'fa-file-circle-check'
+    };
+  }
+
+  return {
+    label: 'Pengajuan',
+    className: 'pengajuan',
+    icon: 'fa-inbox',
+    heroIcon: 'fa-paper-plane'
+  };
+}
+
+function normalizeAdminLeaveDate(value) {
+  if (!value) return '';
+
+  const clean = String(value || '').trim();
+
+  if (/^\d{4}-\d{2}-\d{2}$/.test(clean)) {
+    return clean;
+  }
+
+  const date = new Date(clean);
+
+  if (isNaN(date.getTime())) return clean;
+
+  const year = date.getFullYear();
+  const month = String(date.getMonth() + 1).padStart(2, '0');
+  const day = String(date.getDate()).padStart(2, '0');
+
+  return `${year}-${month}-${day}`;
+}
+
+function formatAdminLeaveDate(value) {
+  const clean = normalizeAdminLeaveDate(value);
+  if (!clean) return '-';
+
+  const date = new Date(clean + 'T00:00:00');
+
+  if (isNaN(date.getTime())) return clean;
+
+  return date.toLocaleDateString('id-ID', {
+    day: '2-digit',
+    month: 'short',
+    year: 'numeric'
+  });
+}
+
+function formatAdminLeaveDateRange(start, end) {
+  const startText = formatAdminLeaveDate(start);
+  const endText = formatAdminLeaveDate(end);
+
+  if (startText === endText) return startText;
+
+  return `${startText} - ${endText}`;
+}
+
+function truncateAdminLeaveText(value, maxLength) {
+  const text = String(value || '');
+
+  if (text.length <= maxLength) return text;
+
+  return text.slice(0, maxLength).trim() + '...';
+}
+
+function getAdminInitial(name) {
+  const clean = String(name || '-').trim();
+
+  if (!clean) return '-';
+
+  return clean.charAt(0).toUpperCase();
+}
+
+function adminSetText(id, value) {
+  const el = document.getElementById(id);
+  if (!el) return;
+
+  el.textContent = value === undefined || value === null ? '' : value;
+}
+
+function adminEscapeHtml(value) {
+  return String(value || '')
+    .replaceAll('&', '&amp;')
+    .replaceAll('<', '&lt;')
+    .replaceAll('>', '&gt;')
+    .replaceAll('"', '&quot;')
+    .replaceAll("'", '&#039;');
+}
+
+function adminEscapeAttribute(value) {
+  return adminEscapeHtml(value);
+}
+
+function adminDebounce(fn, delay = 250) {
+  let timeout;
+  return function(...args) {
+    clearTimeout(timeout);
+    timeout = setTimeout(() => fn.apply(this, args), delay);
+  };
+}
+
+function showAdminLeaveError(error) {
+  if (typeof showError === 'function') {
+    showError(error.message || 'Terjadi kesalahan.');
+    return;
+  }
+
+  Swal.fire({
+    icon: 'error',
+    title: 'Data Gagal Diproses',
+    text: error.message || 'Terjadi kesalahan.',
+    confirmButtonText: 'Saya Mengerti'
+  });
+}
     /****************************************************
      * INIT
      ****************************************************/
@@ -6651,6 +9623,7 @@ function isFetchInterruptionError(error) {
       initAdminProjectToolsEvents();
       initAdminStatusProjectEvents();
       initAdminReportTaskEvents();
+      initAdminLeaveApprovalEvents();
     });
 
     function initClock() {
@@ -8575,7 +11548,14 @@ let adminProjectCurrentTab = 'assigned';
 let adminProjectLoaded = false;
 
 function switchAdminView(viewName) {
-  const validViews = ['leaderboard', 'projectTools', 'statusProject', 'reportTask'];
+  const validViews = [
+    'leaderboard',
+    'projectTools',
+    'statusProject',
+    'reportTask',
+    'leaveApproval'
+  ];
+
   const safeView = validViews.includes(viewName) ? viewName : 'leaderboard';
 
   currentAdminView = safeView;
@@ -8593,14 +11573,16 @@ function switchAdminView(viewName) {
     leaderboard: 'leaderboardView',
     projectTools: 'projectToolsView',
     statusProject: 'statusProjectView',
-    reportTask: 'reportTaskView'
+    reportTask: 'reportTaskView',
+    leaveApproval: 'leaveApprovalView'
   };
 
   const titleMap = {
     leaderboard: 'Leaderboard',
     projectTools: 'Project Tools',
     statusProject: 'Status Project',
-    reportTask: 'Report Task'
+    reportTask: 'Report Task',
+    leaveApproval: 'Leave Approval'
   };
 
   const targetSection = document.getElementById(viewMap[safeView]);
@@ -8633,6 +11615,14 @@ function switchAdminView(viewName) {
   if (safeView === 'reportTask' && !adminReportTaskLoaded) {
     loadAdminReportTask();
   }
+
+if (safeView === 'leaveApproval') {
+  initAdminLeaveApprovalEvents();
+
+  if (!adminLeaveLoaded) {
+    loadAdminLeaveRequests();
+  }
+}
 
   const mainContent = document.querySelector('.main-content') || document.querySelector('main');
 
@@ -9436,14 +12426,21 @@ function showHelp() {
   const activeView =
     currentAdminView ||
     (
-      document.getElementById('reportTaskView')?.classList.contains('active')
-        ? 'reportTask'
-        : document.getElementById('statusProjectView')?.classList.contains('active')
-          ? 'statusProject'
-          : document.getElementById('projectToolsView')?.classList.contains('active')
-            ? 'projectTools'
-            : 'leaderboard'
+      document.getElementById('leaveApprovalView')?.classList.contains('active')
+        ? 'leaveApproval'
+        : document.getElementById('reportTaskView')?.classList.contains('active')
+          ? 'reportTask'
+          : document.getElementById('statusProjectView')?.classList.contains('active')
+            ? 'statusProject'
+            : document.getElementById('projectToolsView')?.classList.contains('active')
+              ? 'projectTools'
+              : 'leaderboard'
     );
+
+  if (activeView === 'leaveApproval') {
+    showLeaveApprovalHelp();
+    return;
+  }
 
   if (activeView === 'reportTask') {
     showReportTaskHelp();
@@ -9559,7 +12556,143 @@ function showStatusProjectHelp() {
   });
 }
 
+function showLeaveApprovalHelp() {
+  Swal.fire({
+    title: '',
+    width: 860,
+    showConfirmButton: true,
+    confirmButtonText: 'Paham',
+    buttonsStyling: false,
+    customClass: {
+      popup: 'swal-admin-help-popup',
+      htmlContainer: 'swal-admin-help-html',
+      confirmButton: 'swal-admin-help-confirm',
+      actions: 'swal-admin-help-actions'
+    },
+    html: `
+      <div class="admin-help-wrap">
+        <div class="admin-help-header">
+          <div class="admin-help-icon">
+            <i class="fa-solid fa-person-walking-arrow-right"></i>
+          </div>
 
+          <div>
+            <div class="admin-help-kicker">
+              <i class="fa-solid fa-circle-info"></i>
+              Admin Guide
+            </div>
+
+            <h2 class="admin-help-title">Panduan Leave Approval Admin</h2>
+
+            <p class="admin-help-desc">
+              Halaman ini digunakan admin untuk mengelola pengajuan izin, sakit, cuti,
+              atau ketidakhadiran user. Admin dapat memproses pengajuan, menyetujui,
+              menolak, serta memberikan alasan keputusan yang akan tampil di dashboard user.
+            </p>
+          </div>
+        </div>
+
+        <div class="admin-help-grid">
+          <div class="admin-help-card">
+            <div class="admin-help-card-top">
+              <div class="admin-help-step">
+                <i class="fa-solid fa-inbox"></i>
+              </div>
+              <h4>Pengajuan</h4>
+            </div>
+            <p>
+              Semua izin baru dari user otomatis masuk ke status <b>Pengajuan</b>.
+              Pada tahap ini admin hanya perlu mengecek detail pengajuan dan bukti pendukung.
+            </p>
+          </div>
+
+          <div class="admin-help-card">
+            <div class="admin-help-card-top">
+              <div class="admin-help-step">
+                <i class="fa-solid fa-spinner"></i>
+              </div>
+              <h4>Process</h4>
+            </div>
+            <p>
+              Jika pengajuan sedang ditinjau, admin dapat menekan tombol <b>Process</b>.
+              Card akan berpindah ke dashboard filter Process dan user dapat melihat status terbaru.
+            </p>
+          </div>
+
+          <div class="admin-help-card">
+            <div class="admin-help-card-top">
+              <div class="admin-help-step">
+                <i class="fa-solid fa-circle-check"></i>
+              </div>
+              <h4>Disetujui</h4>
+            </div>
+            <p>
+              Jika izin diterima, admin dapat memilih <b>Setujui</b> dan menulis alasan keputusan.
+              Status akan berubah menjadi Disetujui di dashboard admin dan dashboard user.
+            </p>
+          </div>
+
+          <div class="admin-help-card">
+            <div class="admin-help-card-top">
+              <div class="admin-help-step">
+                <i class="fa-solid fa-circle-xmark"></i>
+              </div>
+              <h4>Ditolak</h4>
+            </div>
+            <p>
+              Jika izin tidak dapat diterima, admin dapat memilih <b>Tolak</b> dan wajib memberikan
+              alasan agar user memahami dasar keputusan admin.
+            </p>
+          </div>
+        </div>
+
+        <div class="admin-help-flow">
+          <div class="admin-help-flow-title">
+            <i class="fa-solid fa-diagram-project"></i>
+            Alur kerja yang disarankan
+          </div>
+
+          <div class="admin-help-flow-steps">
+            <div class="admin-help-chip">
+              <i class="fa-solid fa-inbox"></i>
+              Cek Pengajuan
+            </div>
+
+            <i class="fa-solid fa-arrow-right admin-help-arrow"></i>
+
+            <div class="admin-help-chip">
+              <i class="fa-solid fa-eye"></i>
+              Lihat Detail
+            </div>
+
+            <i class="fa-solid fa-arrow-right admin-help-arrow"></i>
+
+            <div class="admin-help-chip">
+              <i class="fa-solid fa-spinner"></i>
+              Process
+            </div>
+
+            <i class="fa-solid fa-arrow-right admin-help-arrow"></i>
+
+            <div class="admin-help-chip">
+              <i class="fa-solid fa-scale-balanced"></i>
+              Final Decision
+            </div>
+          </div>
+        </div>
+
+        <div class="admin-help-warning">
+          <i class="fa-solid fa-triangle-exclamation"></i>
+          <p>
+            Tombol <b>Setujui</b> dan <b>Tolak</b> sebaiknya hanya digunakan ketika pengajuan
+            sudah berada di status <b>Process</b>. Pastikan alasan keputusan admin ditulis dengan jelas
+            karena akan terbaca oleh user.
+          </p>
+        </div>
+      </div>
+    `
+  });
+}
 function showProjectToolsHelp() {
   Swal.fire({
     title: '',
@@ -9728,7 +12861,8 @@ function showProjectToolsHelp() {
     confirmButtonText: 'Saya Mengerti'
   });
 }
-    function prepareLeaderboardRows(rows) {
+  
+function prepareLeaderboardRows(rows) {
   return rows.map((row, index) => {
     const leaderboardId =
       row.Leaderboard_ID ||
@@ -9982,6 +13116,7 @@ function showLeaderboardHelp() {
     `
   });
 }
-  </script>
+ 
+ </script>
 </body>
 </html>
